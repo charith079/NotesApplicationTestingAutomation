@@ -17,7 +17,8 @@ pipeline {
         stage('Start Selenium Grid using Docker') {
             steps {
                 bat '''
-                docker-compose down
+                docker-compose down --remove-orphans
+                docker rm -f selenium-hub chrome firefox || exit 0
                 docker-compose up -d
                 '''
             }
