@@ -1,4 +1,5 @@
 pipeline {
+
     agent any
 
     environment {
@@ -7,93 +8,147 @@ pipeline {
 
     stages {
 
+        // ==========================================
+        // Checkout Code
+        // ==========================================
         stage('Checkout Code') {
             steps {
+
                 git branch: 'master',
                     url: 'https://github.com/charith079/NotesApplicationTestingAutomation.git'
             }
         }
 
+        // ==========================================
+        // Start Selenium Grid
+        // ==========================================
         stage('Start Selenium Grid using Docker') {
             steps {
-                bat '''
-                docker-compose down --remove-orphans
-                docker rm -f selenium-hub chrome firefox || exit 0
+
+                sh '''
+                docker-compose down --remove-orphans || true
+
+                docker rm -f selenium-hub chrome firefox || true
+
                 docker-compose up -d
                 '''
             }
         }
 
+        // ==========================================
+        // Wait for Selenium Grid
+        // ==========================================
         stage('Wait for Selenium Grid') {
             steps {
-                bat '''
-                echo Waiting for Selenium Grid...
 
-                powershell -Command "$url='http://localhost:4444/status'; for ($i=0; $i -lt 30; $i++) { try { $r=Invoke-WebRequest $url -UseBasicParsing; if ($r.StatusCode -eq 200) { Write-Output 'Grid is UP'; exit 0 } } catch { } Start-Sleep -Seconds 5 }; Write-Output 'Grid NOT ready'; exit 1"
+                sh '''
+                echo "Waiting for Selenium Grid..."
+
+                sleep 20
+
+                curl http://localhost:4444/status
                 '''
             }
         }
+
+        // ==========================================
+        // Install Python Dependencies
+        // ==========================================
         stage('Install Dependencies') {
             steps {
-                bat '''
-                python -m pip install --upgrade pip
-                pip install -r requirements.txt
+
+                sh '''
+                python3 -m pip install --upgrade pip
+
+                pip3 install -r requirements.txt
                 '''
             }
         }
 
+        // ==========================================
+        // Create Required Folders
+        // ==========================================
         stage('Create Folders') {
             steps {
-                bat '''
-                if not exist Reports mkdir Reports
-                if not exist Screenshots mkdir Screenshots
-                if not exist Logs mkdir Logs
-                if not exist allure-results mkdir allure-results
+
+                sh '''
+                mkdir -p Reports
+                mkdir -p Screenshots
+                mkdir -p Logs
+                mkdir -p allure-results
                 '''
             }
         }
 
+        // ==========================================
+        // Run Parallel Tests
+        // ==========================================
         stage('Run Parallel Tests on Docker Grid (4 Workers)') {
             steps {
+
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    bat '''
-                    set GRID_URL=http://localhost:4444/wd/hub
-                    pytest -n 4 ^
-                    --html=Reports/report.html ^
-                    --self-contained-html ^
+
+                    sh '''
+                    export GRID_URL=http://localhost:4444/wd/hub
+
+                    pytest -n 4 \
+                    --html=Reports/report.html \
+                    --self-contained-html \
                     --alluredir=allure-results
                     '''
                 }
             }
         }
 
+        // ==========================================
+        // Archive Results
+        // ==========================================
         stage('Archive Results') {
             steps {
-                archiveArtifacts artifacts: 'Reports/*', allowEmptyArchive: true
-                archiveArtifacts artifacts: 'Screenshots/*', allowEmptyArchive: true
-                archiveArtifacts artifacts: 'Logs/*', allowEmptyArchive: true
+
+                archiveArtifacts artifacts: 'Reports/*',
+                                allowEmptyArchive: true
+
+                archiveArtifacts artifacts: 'Screenshots/*',
+                                allowEmptyArchive: true
+
+                archiveArtifacts artifacts: 'Logs/*',
+                                allowEmptyArchive: true
             }
         }
 
+        // ==========================================
+        // Generate Allure Report
+        // ==========================================
         stage('Allure Report') {
             steps {
+
                 allure([
+                    includeProperties: false,
+                    jdk: '',
                     results: [[path: 'allure-results']]
                 ])
             }
         }
     }
 
+    // ==========================================
+    // Post Actions
+    // ==========================================
     post {
+
         always {
-            bat 'docker-compose down'
+
+            sh 'docker-compose down'
         }
 
         success {
+
             echo "Tests Passed Successfully"
         }
 
         failure {
+
             echo "Tests Failed - Check Reports"
         }
     }
