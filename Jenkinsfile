@@ -78,6 +78,9 @@ pipeline {
         stage('Allure Report') {
             steps {
                 allure([
+                    includeProperties: false,
+                    jdk: '',
+                    commandline: 'allure',
                     results: [[path: 'allure-results']]
                 ])
             }
