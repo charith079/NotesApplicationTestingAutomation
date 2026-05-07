@@ -27,24 +27,12 @@ pipeline {
         stage('Wait for Selenium Grid') {
             steps {
                 bat '''
-                echo Waiting for Selenium Grid to start...
+                echo Waiting for Selenium Grid...
 
-                powershell -Command ^
-                "for ($i=0; $i -lt 30; $i++) { ^
-                    try { ^
-                        $r = Invoke-WebRequest http://localhost:4444/status -UseBasicParsing; ^
-                        if ($r.StatusCode -eq 200) { ^
-                            Write-Output 'Grid is UP'; ^
-                            exit 0 ^
-                        } ^
-                    } catch {} ^
-                    Start-Sleep -Seconds 5 ^
-                } ^
-                Write-Output 'Grid NOT ready'; exit 1"
+                powershell -Command "$url='http://localhost:4444/status'; for ($i=0; $i -lt 30; $i++) { try { $r=Invoke-WebRequest $url -UseBasicParsing; if ($r.StatusCode -eq 200) { Write-Output 'Grid is UP'; exit 0 } } catch { } Start-Sleep -Seconds 5 }; Write-Output 'Grid NOT ready'; exit 1"
                 '''
             }
         }
-
         stage('Install Dependencies') {
             steps {
                 bat '''
