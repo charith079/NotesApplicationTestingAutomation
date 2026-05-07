@@ -1,0 +1,12 @@
+base_url: https://practice.expandtesting.com/notes/app
+api_base_url: https://practice.expandtesting.com/notes/api
+
+execution_mode: remote   # local | remote | browserstack | lambdatest
+
+grid_url: http://localhost:4444/wd/hub
+
+browser: chrome   # chrome | firefox | edge
+
+credentials:
+  username: charithreddy2004@gmail.com
+  password: Charith@2004

@@ -1,0 +1,14 @@
+[32mINFO    [0m TC-NEG-03:test_invalid_endpoint_api.py:22 ===== TC-NEG-03 STARTED =====
+[32mINFO    [0m TC-NEG-03:api_client.py:100 [LOGIN REQUEST] URL: https://practice.expandtesting.com/notes/api/users/login
+[32mINFO    [0m TC-NEG-03:api_client.py:100 [LOGIN PAYLOAD] {'email': 'charithreddy2004@gmail.com', 'password': 'Charith@2004'}
+[32mINFO    [0m TC-NEG-03:api_client.py:100 [LOGIN RESPONSE CODE] 200
+[32mINFO    [0m TC-NEG-03:api_client.py:100 [LOGIN RESPONSE TIME] 6.319s
+[32mINFO    [0m TC-NEG-03:api_client.py:100 [LOGIN BODY] {"success":true,"status":200,"message":"Login successful","data":{"id":"69fa2ff881124e02985a8edc","name":"Charith Reddy","email":"charithreddy2004@gmail.com","token":"a7f68597432e4dfca7ba9862a8964eb10bb3032bec414104b0cc7d7d78f86beb"}}
+[32mINFO    [0m TC-NEG-03:test_invalid_endpoint_api.py:35 [LOGIN CODE] 200
+[32mINFO    [0m TC-NEG-03:api_client.py:100 [INVALID ENDPOINT REQUEST] URL: https://practice.expandtesting.com/notes/api/hello/invalidEndpoint123
+[32mINFO    [0m TC-NEG-03:api_client.py:100 [HEADERS] {'x-auth-token': 'a7f68597432e4dfca7ba9862a8964eb10bb3032bec414104b0cc7d7d78f86beb'}
+[32mINFO    [0m TC-NEG-03:api_client.py:100 [RESPONSE CODE] 404
+[32mINFO    [0m TC-NEG-03:api_client.py:100 [RESPONSE BODY] {"success":false,"status":404,"message":"Not Found"}
+[32mINFO    [0m TC-NEG-03:test_invalid_endpoint_api.py:45 [RESPONSE CODE] 404
+[32mINFO    [0m TC-NEG-03:test_invalid_endpoint_api.py:46 [RESPONSE BODY] {"success":false,"status":404,"message":"Not Found"}
+[32mINFO    [0m TC-NEG-03:test_invalid_endpoint_api.py:70 TC-NEG-03 COMPLETED SUCCESSFULLY

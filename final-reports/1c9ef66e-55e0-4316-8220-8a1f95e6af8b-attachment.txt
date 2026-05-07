@@ -1,0 +1,7 @@
+[32mINFO    [0m WDM:logger.py:11 xdist worker is: gw5
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+[32mINFO    [0m WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\charith reddy\.wdm\gw5\drivers\chromedriver\win64\147.0.7727.117\chromedriver-win32/chromedriver.exe] found in cache
+[32mINFO    [0m TC-E2E-01:test_e2e_01.py:26 ===== TC-E2E-01 STARTED =====
+[32mINFO    [0m TC-E2E-01:test_e2e_01.py:36 Application opened

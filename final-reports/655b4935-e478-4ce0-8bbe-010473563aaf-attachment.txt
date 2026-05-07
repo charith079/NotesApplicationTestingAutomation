@@ -1,0 +1,14 @@
+[32mINFO    [0m WDM:logger.py:11 xdist worker is: gw2
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+[32mINFO    [0m WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\charith reddy\.wdm\gw2\drivers\chromedriver\win64\147.0.7727.117\chromedriver-win32/chromedriver.exe] found in cache
+[32mINFO    [0m test_create_note:test_notes.py:22 ===== TEST STARTED: CREATE NOTE =====
+[32mINFO    [0m test_create_note:test_notes.py:26 Opening application URL
+[32mINFO    [0m test_create_note:test_notes.py:34 Logging in with valid credentials
+[32mINFO    [0m test_create_note:test_notes.py:43 Validating dashboard
+[32mINFO    [0m test_create_note:test_notes.py:51 Test Data → Title: Test Note 1778139789, Category: Home
+[32mINFO    [0m test_create_note:test_notes.py:55 Creating note
+[32mINFO    [0m test_create_note:test_notes.py:60 Validating note presence in UI
+[32mINFO    [0m test_create_note:test_notes.py:63 Note created successfully
+[32mINFO    [0m test_create_note:test_notes.py:64 ===== TEST COMPLETED =====

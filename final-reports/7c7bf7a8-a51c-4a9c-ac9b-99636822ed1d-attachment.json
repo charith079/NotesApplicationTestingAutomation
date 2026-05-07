@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "status": 200,
+  "message": "Login successful",
+  "data": {
+    "id": "69fa2ff881124e02985a8edc",
+    "name": "Charith Reddy",
+    "email": "charithreddy2004@gmail.com",
+    "token": "a7f68597432e4dfca7ba9862a8964eb10bb3032bec414104b0cc7d7d78f86beb"
+  }
+}

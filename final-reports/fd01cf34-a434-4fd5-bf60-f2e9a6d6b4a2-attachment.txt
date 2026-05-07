@@ -1,0 +1,7 @@
+[32mINFO    [0m WDM:logger.py:11 xdist worker is: gw3
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+[32mINFO    [0m WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\charith reddy\.wdm\gw3\drivers\chromedriver\win64\147.0.7727.117\chromedriver-win32/chromedriver.exe] found in cache
+[32mINFO    [0m TC-NEG-01:test_empty_notes.py:25 ===== TC-NEG-01 STARTED =====
+[32mINFO    [0m TC-NEG-01:test_empty_notes.py:33 Application opened

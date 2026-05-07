@@ -1,0 +1,13 @@
+2026-05-07 12:31:07,144 | INFO | TC-NEG-02 | ===== TC-NEG-02 STARTED =====
+2026-05-07 12:31:07,144 | INFO | TC-NEG-02 | [LOGIN REQUEST] URL: https://practice.expandtesting.com/notes/api/users/login
+2026-05-07 12:31:07,144 | INFO | TC-NEG-02 | [LOGIN PAYLOAD] {'email': 'charithreddy2004@gmail.com', 'password': 'Charith@2004'}
+2026-05-07 12:31:19,014 | INFO | TC-NEG-02 | [LOGIN RESPONSE CODE] 200
+2026-05-07 12:31:19,015 | INFO | TC-NEG-02 | [LOGIN RESPONSE TIME] 11.870s
+2026-05-07 12:31:19,015 | INFO | TC-NEG-02 | [LOGIN BODY] {"success":true,"status":200,"message":"Login successful","data":{"id":"69fa2ff881124e02985a8edc","name":"Charith Reddy","email":"charithreddy2004@gmail.com","token":"a7f68597432e4dfca7ba9862a8964eb10bb3032bec414104b0cc7d7d78f86beb"}}
+2026-05-07 12:31:19,016 | INFO | TC-NEG-02 | [GET NOTES REQUEST] URL: https://practice.expandtesting.com/notes/api/notes
+2026-05-07 12:31:19,017 | INFO | TC-NEG-02 | [HEADERS] {'x-auth-token': 'sfags84gsd65ds4gd'}
+2026-05-07 12:31:26,572 | INFO | TC-NEG-02 | [GET NOTES RESPONSE CODE] 401
+2026-05-07 12:31:26,572 | INFO | TC-NEG-02 | [GET NOTES RESPONSE TIME] 7.555s
+2026-05-07 12:31:26,572 | INFO | TC-NEG-02 | [GET NOTES BODY] {"success":false,"status":401,"message":"Access token is not valid or has expired, you will need to login"}
+2026-05-07 12:31:26,573 | INFO | TC-NEG-02 | [RESPONSE CODE] 401
+2026-05-07 12:31:26,573 | INFO | TC-NEG-02 | [RESPONSE BODY] {"success":false,"status":401,"message":"Access token is not valid or has expired, you will need to login"}
