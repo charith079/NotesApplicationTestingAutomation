@@ -5,3 +5,4 @@ webdriver-manager
 pytest-xdist
 allure-pytest
 pyyaml
+pytest-html
