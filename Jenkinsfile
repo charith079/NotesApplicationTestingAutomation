@@ -24,11 +24,23 @@ pipeline {
             }
         }
 
-        stage('Wait for Grid to be Ready') {
+        stage('Wait for Selenium Grid') {
             steps {
                 bat '''
-                timeout /t 15
-                curl http://localhost:4444/status
+                echo Waiting for Selenium Grid to start...
+
+                powershell -Command ^
+                "for ($i=0; $i -lt 30; $i++) { ^
+                    try { ^
+                        $r = Invoke-WebRequest http://localhost:4444/status -UseBasicParsing; ^
+                        if ($r.StatusCode -eq 200) { ^
+                            Write-Output 'Grid is UP'; ^
+                            exit 0 ^
+                        } ^
+                    } catch {} ^
+                    Start-Sleep -Seconds 5 ^
+                } ^
+                Write-Output 'Grid NOT ready'; exit 1"
                 '''
             }
         }
