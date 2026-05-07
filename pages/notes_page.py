@@ -53,12 +53,18 @@ class NotesPage(BasePage):
     
     def is_home_page_loaded(self):
         try:
-            WebDriverWait(self.driver, 15).until(
-                EC.visibility_of_element_located(self.home_logo)
-            )
-            WebDriverWait(self.driver, 15).until(
-                EC.visibility_of_element_located(self.logout_btn)
-            )
+            # WebDriverWait(self.driver, 15).until(
+            #     EC.visibility_of_element_located(self.home_logo)
+            # )
+            # WebDriverWait(self.driver, 15).until(
+            #     EC.visibility_of_element_located(self.logout_btn)
+            # )
+            # Intelligent Wait:
+            self.wait_for_page_load()
+
+            self.wait_visible(self.home_logo)
+
+            self.wait_visible(self.logout_btn)
             return True
         except:
             return False
@@ -69,38 +75,67 @@ class NotesPage(BasePage):
 
     def create_note(self, category, title, description, expect_success=True):
 
+        self.wait_for_dom_stability()
+
         self.safe_click(self.add_note_btn)
+
         self.wait_visible(self.category_dropdown)
 
-        Select(self.find(self.category_dropdown)).select_by_visible_text(category)
+        Select(
+            self.find(self.category_dropdown)
+        ).select_by_visible_text(category)
 
-        self.send_keys(self.title_input, title)
-        self.send_keys(self.description_input, description)
+        # 🔹 Handle empty fields properly
 
-        element = self.wait_clickable(self.submit_btn)
-        self.driver.execute_script("arguments[0].click();", element)
+        if title:
+            self.send_keys(self.title_input, title)
 
-        # ✔ Only wait for success flow
+        if description:
+            self.send_keys(self.description_input, description)
+
+        self.safe_click(self.submit_btn)
+
+        # # 🔹 Wait for validation rendering
+        # self.wait_for_dom_stability()
+
         if expect_success:
-            WebDriverWait(self.driver, 10).until(
-                EC.invisibility_of_element_located(self.submit_btn)
-            )
+
+            self.wait_for_page_load()
+
+            self.wait_for_dom_stability()
 
     # =========================================================
     # 🔹 Note validation (STRICT - FIXED)
     # =========================================================
-
     def is_note_present(self, title):
+
         if not title:
-            return False  # 🔥 IMPORTANT FIX
+            return False
 
         try:
-            WebDriverWait(self.driver, 10).until(
-                EC.text_to_be_present_in_element(self.notes_list, title)
-            )
-            return True
+
+            # Intelligent Wait:
+            self.wait_for_dom_stability()
+
+            notes = self.get_text(self.notes_list)
+
+            return title in notes
+
         except:
             return False
+
+    # def is_note_present(self, title):
+    #     if not title:
+    #         return False  # 🔥 IMPORTANT FIX
+
+    #     try:
+    #         WebDriverWait(self.driver, 10).until(
+    #             EC.text_to_be_present_in_element(self.notes_list, title)
+    #         )
+    #         return True
+    #     except:
+    #         return False
+
 
     # =========================================================
     # 🔹 SAFE NEGATIVE CHECK (NEW - IMPORTANT)
@@ -122,35 +157,92 @@ class NotesPage(BasePage):
     # 🔹 SUCCESS MESSAGE
     # =========================================================
 
+    # def get_success_message(self):
+    #     try:
+    #         element = WebDriverWait(self.driver, 10).until(
+    #             EC.visibility_of_element_located(self.success_message)
+    #         )
+    #         return element.text
+    #     except:
+    #         return None
     def get_success_message(self):
+
         try:
-            element = WebDriverWait(self.driver, 10).until(
-                EC.visibility_of_element_located(self.success_message)
+
+            element = self.wait_visible(
+                self.success_message,
+                timeout=10
             )
-            return element.text
+
+            # Intelligent Wait:
+            self.wait_for_text(element)
+
+            return element.text.strip()
+
         except:
             return None
-
     # =========================================================
     # 🔴 VALIDATION ERRORS
     # =========================================================
 
+    # def get_title_error(self):
+    #     try:
+    #         return WebDriverWait(self.driver, 5).until(
+    #             EC.visibility_of_element_located(self.title_error)
+    #         ).text.strip()
+    #     except:
+    #         return ""
+
+    # def get_description_error(self):
+    #     try:
+    #         return WebDriverWait(self.driver, 5).until(
+    #             EC.visibility_of_element_located(self.description_error)
+    #         ).text.strip()
+    #     except:
+    #         return ""
+
+    # def get_field_error(self, field):
+
+    #     locator_map = {
+    #         "title": self.title_error,
+    #         "description": self.description_error
+    #     }
+
+    #     locator = locator_map.get(field)
+
+    #     if not locator:
+    #         return ""
+
+    #     try:
+    #         return WebDriverWait(self.driver, 5).until(
+    #             EC.visibility_of_element_located(locator)
+    #         ).text.strip()
+    #     except:
+    #         return ""
+    
     def get_title_error(self):
+
         try:
-            return WebDriverWait(self.driver, 5).until(
-                EC.visibility_of_element_located(self.title_error)
-            ).text.strip()
+            element = self.wait_visible(self.title_error)
+
+            self.wait_for_text(element)
+
+            return element.text.strip()
+
         except:
             return ""
-
     def get_description_error(self):
+
         try:
-            return WebDriverWait(self.driver, 5).until(
-                EC.visibility_of_element_located(self.description_error)
-            ).text.strip()
+            element = self.wait_visible(self.description_error)
+
+            self.wait_for_text(element)
+
+            return element.text.strip()
+
         except:
             return ""
-
+            
     def get_field_error(self, field):
 
         locator_map = {
@@ -160,12 +252,13 @@ class NotesPage(BasePage):
 
         locator = locator_map.get(field)
 
-        if not locator:
-            return ""
-
         try:
-            return WebDriverWait(self.driver, 5).until(
-                EC.visibility_of_element_located(locator)
-            ).text.strip()
+
+            return WebDriverWait(self.driver, 10).until(
+                lambda d: (
+                    text := d.find_element(*locator).text.strip()
+                ) if d.find_element(*locator).text.strip() else False
+            )
+
         except:
             return ""
