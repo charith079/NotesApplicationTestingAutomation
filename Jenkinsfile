@@ -49,23 +49,29 @@ pipeline {
         // =========================================================
         stage('Wait for Selenium Grid') {
             steps {
-                bat '''
-                echo Waiting for Selenium Grid...
+                powershell '''
+                Write-Host "Waiting for Selenium Grid..."
 
-                powershell -Command ^
-                "$url='http://localhost:4444/status'; ^
-                for ($i=0; $i -lt 30; $i++) { ^
-                    try { ^
-                        $r=Invoke-WebRequest $url -UseBasicParsing; ^
-                        if ($r.StatusCode -eq 200) { ^
-                            Write-Output 'Grid is UP'; ^
-                            exit 0 ^
-                        } ^
-                    } catch { } ^
-                    Start-Sleep -Seconds 5 ^
-                }; ^
-                Write-Output 'Grid NOT ready'; ^
-                exit 1"
+                $url = "http://localhost:4444/status"
+
+                for ($i = 0; $i -lt 30; $i++) {
+                    try {
+                        $response = Invoke-WebRequest -Uri $url -UseBasicParsing
+
+                        if ($response.StatusCode -eq 200) {
+                            Write-Host "Grid is UP"
+                            exit 0
+                        }
+                    }
+                    catch {
+                        Write-Host "Waiting... attempt $i"
+                    }
+
+                    Start-Sleep -Seconds 5
+                }
+
+                Write-Host "Grid NOT ready"
+                exit 1
                 '''
             }
         }
