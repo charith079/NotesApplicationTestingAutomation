@@ -1,0 +1,9 @@
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+[32mINFO    [0m WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\charith reddy\.wdm\drivers\chromedriver\win64\147.0.7727.117\chromedriver-win32/chromedriver.exe] found in cache
+[32mINFO    [0m test_login:test_login.py:20 ===== TEST STARTED: LOGIN =====
+[32mINFO    [0m retry_handler:retry_handler.py:129 [RERUN ENGINE] Attempt 1/3
+[32mINFO    [0m retry_handler:retry_handler.py:129 [RERUN ENGINE] Attempt 1/3
+[32mINFO    [0m retry_handler:retry_handler.py:129 [RERUN ENGINE] Attempt 1/3
+[32mINFO    [0m test_login:test_login.py:40 Login successful

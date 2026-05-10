@@ -1,0 +1,152 @@
+2026-05-10 22:10:04,715 | INFO | test_success_message_note | ===== TEST STARTED: SUCCESS MESSAGE VALIDATION =====
+2026-05-10 22:10:04,717 | INFO | test_success_message_note | Opening application URL
+2026-05-10 22:10:14,464 | INFO | test_success_message_note | LoginPage initialized
+2026-05-10 22:10:14,464 | INFO | test_success_message_note | LoginPage initialized
+2026-05-10 22:10:14,465 | INFO | test_success_message_note | NotesPage initialized
+2026-05-10 22:10:14,465 | INFO | test_success_message_note | NotesPage initialized
+2026-05-10 22:10:14,466 | INFO | test_success_message_note | Logging in
+2026-05-10 22:10:14,466 | INFO | test_success_message_note | Navigating to login page
+2026-05-10 22:10:14,467 | INFO | test_success_message_note | Waiting for page load
+2026-05-10 22:10:14,494 | INFO | test_success_message_note | Page loaded successfully
+2026-05-10 22:10:14,494 | INFO | test_success_message_note | Clicking element: [('xpath', "//a[contains(text(),'Login')]"), ('link text', 'Login'), ('partial link text', 'Log')]
+2026-05-10 22:10:14,566 | INFO | test_success_message_note | Waiting for clickable element: [('xpath', "//a[contains(text(),'Login')]"), ('link text', 'Login'), ('partial link text', 'Log')]
+2026-05-10 22:10:14,566 | INFO | test_success_message_note | [HEALING] Trying locator: ('xpath', "//a[contains(text(),'Login')]")
+2026-05-10 22:10:14,777 | INFO | test_success_message_note | [HEALING SUCCESS] ('xpath', "//a[contains(text(),'Login')]")
+2026-05-10 22:10:14,777 | INFO | test_success_message_note | Element clickable: [('xpath', "//a[contains(text(),'Login')]"), ('link text', 'Login'), ('partial link text', 'Log')]
+2026-05-10 22:10:22,452 | INFO | test_success_message_note | Normal click successful
+2026-05-10 22:10:22,452 | INFO | test_success_message_note | Successfully navigated to login page
+2026-05-10 22:10:22,452 | INFO | test_success_message_note | Starting login process
+2026-05-10 22:10:22,453 | INFO | test_success_message_note | Waiting for email field
+2026-05-10 22:10:22,453 | INFO | test_success_message_note | Waiting for visible element: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:10:22,454 | INFO | test_success_message_note | [HEALING] Trying locator: ('id', 'email')
+2026-05-10 22:10:22,507 | INFO | test_success_message_note | [HEALING SUCCESS] ('id', 'email')
+2026-05-10 22:10:22,508 | INFO | test_success_message_note | Element visible: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:10:22,508 | INFO | test_success_message_note | Waiting for DOM stability
+2026-05-10 22:10:22,508 | INFO | test_success_message_note | Waiting for DOM stability
+2026-05-10 22:10:23,508 | INFO | test_success_message_note | DOM stable
+2026-05-10 22:10:23,508 | INFO | test_success_message_note | Entering username: charithreddy2004@gmail.com
+2026-05-10 22:10:23,508 | INFO | test_success_message_note | Sending text to element: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:10:23,508 | INFO | test_success_message_note | Input text: charithreddy2004@gmail.com
+2026-05-10 22:10:23,597 | INFO | test_success_message_note | Waiting for visible element: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:10:23,597 | INFO | test_success_message_note | [HEALING] Trying locator: ('id', 'email')
+2026-05-10 22:10:23,745 | INFO | test_success_message_note | [HEALING SUCCESS] ('id', 'email')
+2026-05-10 22:10:23,745 | INFO | test_success_message_note | Element visible: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:10:25,108 | INFO | test_success_message_note | Text entered successfully
+2026-05-10 22:10:25,109 | INFO | test_success_message_note | Entering password
+2026-05-10 22:10:25,109 | INFO | test_success_message_note | Sending text to element: [('id', 'password'), ('name', 'password'), ('css selector', "[data-testid='login-password']"), ('css selector', "input[type='password']"), ('xpath', "//input[@id='password']")]
+2026-05-10 22:10:25,109 | INFO | test_success_message_note | Input text: Charith@2004
+2026-05-10 22:10:25,132 | INFO | test_success_message_note | Waiting for visible element: [('id', 'password'), ('name', 'password'), ('css selector', "[data-testid='login-password']"), ('css selector', "input[type='password']"), ('xpath', "//input[@id='password']")]
+2026-05-10 22:10:25,132 | INFO | test_success_message_note | [HEALING] Trying locator: ('id', 'password')
+2026-05-10 22:10:25,284 | INFO | test_success_message_note | [HEALING SUCCESS] ('id', 'password')
+2026-05-10 22:10:25,284 | INFO | test_success_message_note | Element visible: [('id', 'password'), ('name', 'password'), ('css selector', "[data-testid='login-password']"), ('css selector', "input[type='password']"), ('xpath', "//input[@id='password']")]
+2026-05-10 22:10:26,527 | INFO | test_success_message_note | Text entered successfully
+2026-05-10 22:10:26,527 | INFO | test_success_message_note | Waiting for login button
+2026-05-10 22:10:26,528 | INFO | test_success_message_note | Waiting for clickable element: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:10:26,528 | INFO | test_success_message_note | [HEALING] Trying locator: ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:10:26,647 | INFO | test_success_message_note | [HEALING SUCCESS] ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:10:26,647 | INFO | test_success_message_note | Element clickable: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:10:26,647 | INFO | test_success_message_note | Clicking login button
+2026-05-10 22:10:26,647 | INFO | test_success_message_note | Safe clicking element: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:10:26,647 | INFO | test_success_message_note | Waiting for clickable element: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:10:26,647 | INFO | test_success_message_note | [HEALING] Trying locator: ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:10:26,829 | INFO | test_success_message_note | [HEALING SUCCESS] ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:10:26,830 | INFO | test_success_message_note | Element clickable: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:10:26,936 | INFO | test_success_message_note | Safe click successful
+2026-05-10 22:10:26,936 | INFO | test_success_message_note | Waiting for page load after login
+2026-05-10 22:10:26,937 | INFO | test_success_message_note | Waiting for page load
+2026-05-10 22:10:26,974 | INFO | test_success_message_note | Page loaded successfully
+2026-05-10 22:10:26,975 | INFO | test_success_message_note | Login process completed
+2026-05-10 22:10:26,975 | INFO | test_success_message_note | Validating Notes dashboard
+2026-05-10 22:10:26,975 | INFO | test_success_message_note | Waiting for page load
+2026-05-10 22:10:27,037 | INFO | test_success_message_note | Page loaded successfully
+2026-05-10 22:10:27,038 | INFO | test_success_message_note | Waiting for visible element: ('css selector', "[data-testid='home']")
+2026-05-10 22:10:27,038 | INFO | test_success_message_note | [HEALING] Trying locator: ('css selector', "[data-testid='home']")
+2026-05-10 22:10:27,768 | INFO | test_success_message_note | [HEALING SUCCESS] ('css selector', "[data-testid='home']")
+2026-05-10 22:10:27,769 | INFO | test_success_message_note | Element visible: ('css selector', "[data-testid='home']")
+2026-05-10 22:10:27,769 | INFO | test_success_message_note | Waiting for visible element: ('css selector', "[data-testid='logout']")
+2026-05-10 22:10:27,769 | INFO | test_success_message_note | [HEALING] Trying locator: ('css selector', "[data-testid='logout']")
+2026-05-10 22:10:27,913 | INFO | test_success_message_note | [HEALING SUCCESS] ('css selector', "[data-testid='logout']")
+2026-05-10 22:10:27,914 | INFO | test_success_message_note | Element visible: ('css selector', "[data-testid='logout']")
+2026-05-10 22:10:27,914 | INFO | test_success_message_note | Dashboard loaded successfully
+2026-05-10 22:10:27,914 | INFO | test_success_message_note | Creating note → Test Note 1778431227
+2026-05-10 22:10:27,914 | INFO | test_success_message_note | Starting note creation
+2026-05-10 22:10:27,914 | INFO | test_success_message_note | Category: Home, Title: Test Note 1778431227
+2026-05-10 22:10:27,915 | INFO | test_success_message_note | Waiting for DOM stability
+2026-05-10 22:10:28,915 | INFO | test_success_message_note | DOM stable
+2026-05-10 22:10:28,915 | INFO | test_success_message_note | Clicking Add Note button
+2026-05-10 22:10:28,917 | INFO | test_success_message_note | Safe clicking element: ('css selector', "[data-testid='add-new-note']")
+2026-05-10 22:10:28,917 | INFO | test_success_message_note | Waiting for clickable element: ('css selector', "[data-testid='add-new-note']")
+2026-05-10 22:10:28,918 | INFO | test_success_message_note | [HEALING] Trying locator: ('css selector', "[data-testid='add-new-note']")
+2026-05-10 22:10:29,088 | INFO | test_success_message_note | [HEALING SUCCESS] ('css selector', "[data-testid='add-new-note']")
+2026-05-10 22:10:29,088 | INFO | test_success_message_note | Element clickable: ('css selector', "[data-testid='add-new-note']")
+2026-05-10 22:10:29,242 | INFO | test_success_message_note | Safe click successful
+2026-05-10 22:10:29,242 | INFO | test_success_message_note | Waiting for note modal
+2026-05-10 22:10:29,242 | INFO | test_success_message_note | Waiting for visible element: ('css selector', "[data-testid='note-category']")
+2026-05-10 22:10:29,242 | INFO | test_success_message_note | [HEALING] Trying locator: ('css selector', "[data-testid='note-category']")
+2026-05-10 22:10:29,302 | INFO | test_success_message_note | [HEALING SUCCESS] ('css selector', "[data-testid='note-category']")
+2026-05-10 22:10:29,302 | INFO | test_success_message_note | Element visible: ('css selector', "[data-testid='note-category']")
+2026-05-10 22:10:29,302 | INFO | test_success_message_note | Selecting category: Home
+2026-05-10 22:10:29,303 | INFO | test_success_message_note | Finding element: ('css selector', "[data-testid='note-category']")
+2026-05-10 22:10:29,303 | INFO | test_success_message_note | [HEALING] Trying locator: ('css selector', "[data-testid='note-category']")
+2026-05-10 22:10:29,364 | INFO | test_success_message_note | [HEALING SUCCESS] ('css selector', "[data-testid='note-category']")
+2026-05-10 22:10:29,364 | INFO | test_success_message_note | Element found: ('css selector', "[data-testid='note-category']")
+2026-05-10 22:10:29,697 | INFO | test_success_message_note | Entering note title: Test Note 1778431227
+2026-05-10 22:10:29,698 | INFO | test_success_message_note | Sending text to element: ('css selector', "[data-testid='note-title']")
+2026-05-10 22:10:29,698 | INFO | test_success_message_note | Input text: Test Note 1778431227
+2026-05-10 22:10:29,726 | INFO | test_success_message_note | Waiting for visible element: ('css selector', "[data-testid='note-title']")
+2026-05-10 22:10:29,726 | INFO | test_success_message_note | [HEALING] Trying locator: ('css selector', "[data-testid='note-title']")
+2026-05-10 22:10:29,884 | INFO | test_success_message_note | [HEALING SUCCESS] ('css selector', "[data-testid='note-title']")
+2026-05-10 22:10:29,885 | INFO | test_success_message_note | Element visible: ('css selector', "[data-testid='note-title']")
+2026-05-10 22:10:31,102 | INFO | test_success_message_note | Text entered successfully
+2026-05-10 22:10:31,102 | INFO | test_success_message_note | Entering note description
+2026-05-10 22:10:31,103 | INFO | test_success_message_note | Sending text to element: ('css selector', "[data-testid='note-description']")
+2026-05-10 22:10:31,103 | INFO | test_success_message_note | Input text: Success message validation
+2026-05-10 22:10:31,119 | INFO | test_success_message_note | Waiting for visible element: ('css selector', "[data-testid='note-description']")
+2026-05-10 22:10:31,119 | INFO | test_success_message_note | [HEALING] Trying locator: ('css selector', "[data-testid='note-description']")
+2026-05-10 22:10:31,265 | INFO | test_success_message_note | [HEALING SUCCESS] ('css selector', "[data-testid='note-description']")
+2026-05-10 22:10:31,266 | INFO | test_success_message_note | Element visible: ('css selector', "[data-testid='note-description']")
+2026-05-10 22:10:32,527 | INFO | test_success_message_note | Text entered successfully
+2026-05-10 22:10:32,527 | INFO | test_success_message_note | Submitting note
+2026-05-10 22:10:32,527 | INFO | test_success_message_note | Safe clicking element: ('css selector', "[data-testid='note-submit']")
+2026-05-10 22:10:32,527 | INFO | test_success_message_note | Waiting for clickable element: ('css selector', "[data-testid='note-submit']")
+2026-05-10 22:10:32,527 | INFO | test_success_message_note | [HEALING] Trying locator: ('css selector', "[data-testid='note-submit']")
+2026-05-10 22:10:32,629 | INFO | test_success_message_note | [HEALING SUCCESS] ('css selector', "[data-testid='note-submit']")
+2026-05-10 22:10:32,629 | INFO | test_success_message_note | Element clickable: ('css selector', "[data-testid='note-submit']")
+2026-05-10 22:10:32,720 | INFO | test_success_message_note | Safe click successful
+2026-05-10 22:10:32,720 | INFO | test_success_message_note | Waiting for successful note creation
+2026-05-10 22:10:32,720 | INFO | test_success_message_note | Waiting for page load
+2026-05-10 22:10:32,780 | INFO | test_success_message_note | Page loaded successfully
+2026-05-10 22:10:32,781 | INFO | test_success_message_note | Waiting for DOM stability
+2026-05-10 22:10:33,781 | INFO | test_success_message_note | DOM stable
+2026-05-10 22:10:33,781 | INFO | test_success_message_note | Note created successfully
+2026-05-10 22:10:33,781 | INFO | test_success_message_note | Fetching success message
+2026-05-10 22:10:33,782 | INFO | test_success_message_note | Waiting for visible element: ('css selector', "[data-testid='alert-message']")
+2026-05-10 22:10:33,782 | INFO | test_success_message_note | [HEALING] Trying locator: ('css selector', "[data-testid='alert-message']")
+2026-05-10 22:11:17,271 | WARNING | test_success_message_note | [HEALING FAILED] ('css selector', "[data-testid='alert-message']")
+2026-05-10 22:11:17,272 | WARNING | test_success_message_note | [MCP HEALING] All locators failed. Asking AI...
+2026-05-10 22:11:23,443 | INFO | test_success_message_note | 🚨 MCP AI RESPONSE:
+{'xpath': "//div[contains(@class, 'alert') and contains(text(), 'alert')]", 'css': "div.alert, .alert-message, [role='alert']", 'reason': 'The original locator uses a specific data-testid attribute which may no longer exist or be dynamically generated. The suggested locators are more resilient: the XPath looks for common alert patterns using class and text content, while the CSS selector targets standard alert classes and ARIA roles that are commonly used for alert messages in modern web applications.'}
+2026-05-10 22:11:23,443 | INFO | test_success_message_note | [MCP HEALING] Trying AI locator: //div[contains(@class, 'alert') and contains(text(), 'alert')]
+2026-05-10 22:11:23,443 | ERROR | test_success_message_note | [MCP HEALING FAILED] AI also failed: WebDriver.find_element() takes from 1 to 3 positional arguments but 63 were given
+2026-05-10 22:11:23,444 | ERROR | test_success_message_note | Unable to fetch success message: Message: 
+Stacktrace:
+#0 0x55c18116eb6a <unknown>
+#1 0x55c180b70265 <unknown>
+#2 0x55c180bc2f76 <unknown>
+#3 0x55c180bc31b1 <unknown>
+#4 0x55c180c0e7d4 <unknown>
+#5 0x55c180c0b969 <unknown>
+#6 0x55c180bb65cf <unknown>
+#7 0x55c180bb7391 <unknown>
+#8 0x55c18113404b <unknown>
+#9 0x55c18113700d <unknown>
+#10 0x55c181120808 <unknown>
+#11 0x55c181137ba0 <unknown>
+#12 0x55c181107280 <unknown>
+#13 0x55c18115bdb8 <unknown>
+#14 0x55c18115bf88 <unknown>
+#15 0x55c18116d5de <unknown>
+#16 0x7fdf54c1daa4 <unknown>
+#17 0x7fdf54caac6c <unknown>
+
+2026-05-10 22:11:23,444 | INFO | test_success_message_note | Success message: None

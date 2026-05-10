@@ -19,14 +19,14 @@ def test_get_notes_response_time():
 
     api = APIClient(config["api_base_url"], logger)
 
-    # 🔐 LOGIN STEP
+    #  LOGIN STEP
     with allure.step("Login to API"):
         login_response = api.login(
             config["credentials"]["username"],
             config["credentials"]["password"]
         )
 
-    # 📥 API CALL STEP
+    #  API CALL STEP
     with allure.step("Send GET /notes request and measure response time"):
         response = api.get_notes()
 
@@ -36,7 +36,7 @@ def test_get_notes_response_time():
             attachment_type=allure.attachment_type.TEXT
         )
 
-    # 📊 VALIDATION STEP
+    #  VALIDATION STEP
     with allure.step("Validate response time is within threshold"):
 
         logger.info(f"Response time: {response.response_time:.3f}s")

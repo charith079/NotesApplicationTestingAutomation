@@ -22,8 +22,8 @@ def test_login(driver):
     with allure.step("Open application"):
         driver.get(config["base_url"])
 
-    login_page = LoginPage(driver)
-    notes_page = NotesPage(driver)
+    login_page = LoginPage(driver , logger)
+    notes_page = NotesPage(driver , logger)
 
     with allure.step("Navigate to login page"):
         login_page.go_to_login_page()

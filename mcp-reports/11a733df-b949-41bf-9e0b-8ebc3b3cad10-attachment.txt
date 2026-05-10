@@ -1,0 +1,4 @@
+2026-05-08 11:38:13,938 | INFO | test_invalid_login_TC-UI-02 | ===== TEST STARTED: TC-UI-02 =====
+2026-05-08 11:38:23,772 | INFO | test_invalid_login_TC-UI-02 | Error message displayed: Incorrect email address or password
+2026-05-08 11:38:34,134 | INFO | test_invalid_login_TC-UI-02 | TC-UI-02 executed successfully
+2026-05-08 11:38:34,135 | INFO | test_invalid_login_TC-UI-02 | ===== TEST COMPLETED: TC-UI-02 =====

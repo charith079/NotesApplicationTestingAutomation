@@ -1,0 +1,5 @@
+2026-05-08 11:39:23,857 | INFO | test_success_message_note | ===== TEST STARTED: SUCCESS MESSAGE VALIDATION =====
+2026-05-08 11:39:23,858 | INFO | test_success_message_note | Opening application URL
+2026-05-08 11:39:26,773 | INFO | test_success_message_note | Logging in
+2026-05-08 11:39:33,350 | INFO | test_success_message_note | Creating note → Test Note 1778220573
+2026-05-08 11:39:48,402 | INFO | test_success_message_note | Success message: None

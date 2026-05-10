@@ -21,15 +21,15 @@ def test_create_note(driver):
 
     logger.info("===== TEST STARTED: CREATE NOTE =====")
 
-    # 🔹 Open Application
+    #  Open Application
     with allure.step("Open application"):
         logger.info("Opening application URL")
         driver.get(config["base_url"])
 
-    login_page = LoginPage(driver)
-    notes_page = NotesPage(driver)
+    login_page = LoginPage(driver,logger)
+    notes_page = NotesPage(driver,logger)
 
-    # 🔹 Login
+    # Login
     with allure.step("Login to application"):
         logger.info("Logging in with valid credentials")
         login_page.go_to_login_page()
@@ -38,24 +38,24 @@ def test_create_note(driver):
             config["credentials"]["password"]
         )
 
-    # 🔹 Validate Dashboard
+    #  Validate Dashboard
     with allure.step("Validate dashboard is loaded"):
         logger.info("Validating dashboard")
         assert notes_page.is_home_page_loaded(), "Dashboard not loaded"
 
-    # 🔹 Dynamic Test Data
+    #  Dynamic Test Data
     title = f"Test Note {int(time.time())}"
     description = "Automation Test Description"
     category = "Home"
 
     logger.info(f"Test Data → Title: {title}, Category: {category}")
 
-    # 🔹 Create Note
+    # Create Note
     with allure.step("Create a new note"):
         logger.info("Creating note")
         notes_page.create_note(category, title, description)
 
-    # 🔹 Validate Note Appears
+    #  Validate Note Appears
     with allure.step("Validate note is created and visible"):
         logger.info("Validating note presence in UI")
         assert notes_page.is_note_present(title), "Note was not created successfully"

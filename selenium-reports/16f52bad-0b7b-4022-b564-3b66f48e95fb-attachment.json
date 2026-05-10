@@ -1,0 +1,1 @@
+{'success': True, 'status': 200, 'message': 'Note successfully created', 'data': {'id': '6a00b4760fadc10297de03cc', 'title': 'Delete_Test_1778431093415', 'description': 'Temp note for delete test', 'category': 'Home', 'completed': False, 'created_at': '2026-05-10T16:38:14.322Z', 'updated_at': '2026-05-10T16:38:14.322Z', 'user_id': '69fa2ff881124e02985a8edc'}}

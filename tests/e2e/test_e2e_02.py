@@ -10,7 +10,7 @@ from utils.logger import get_logger
 
 
 # =========================================================
-# 🔷 TC-E2E-02: API → UI Delete Validation
+#  TC-E2E-02: API → UI Delete Validation
 # =========================================================
 
 @pytest.mark.serial
@@ -27,8 +27,8 @@ def test_api_delete_to_ui_validation(driver):
 
     api = APIClient(config["api_base_url"], logger)
 
-    login_page = LoginPage(driver)
-    notes_page = NotesPage(driver)
+    login_page = LoginPage(driver,logger)
+    notes_page = NotesPage(driver,logger)
 
     # # 🔹 OPEN APP
     with allure.step("Login"):
@@ -44,7 +44,7 @@ def test_api_delete_to_ui_validation(driver):
 
     assert notes_page.is_home_page_loaded()
 
-    # 🔹 CREATE NOTE (UI)
+    # CREATE NOTE (UI)
     title = f"E2E Delete {int(time.time())}"
     description = "Delete validation"
     category = "Home"
@@ -54,13 +54,13 @@ def test_api_delete_to_ui_validation(driver):
 
     assert notes_page.is_note_present(title)
 
-    # 🔹 LOGIN API
+    #  LOGIN API
     api.login(
         config["credentials"]["username"],
         config["credentials"]["password"]
     )
 
-    # 🔹 GET NOTES & FIND ID
+    # GET NOTES & FIND ID
     with allure.step("Fetch note ID from API"):
         response = api.get_notes()
         notes = response.json()["data"]
@@ -72,16 +72,16 @@ def test_api_delete_to_ui_validation(driver):
 
         assert note_id is not None, "Note ID not found"
 
-    # 🔹 DELETE VIA API
+    #  DELETE VIA API
     with allure.step("Delete note via API"):
         delete_response = api.delete_note(note_id)
 
         assert delete_response.status_code in [200, 204]
 
-    # 🔹 REFRESH UI
+    #  REFRESH UI
     with allure.step("Refresh UI and validate deletion"):
         driver.refresh()
-
+        
         assert not notes_page.is_note_present(title)
 
     logger.info("===== TC-E2E-02 COMPLETED =====")

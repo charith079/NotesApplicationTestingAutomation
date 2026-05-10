@@ -8,7 +8,7 @@ from utils.logger import get_logger
 
 
 # =========================================================
-# 🔷 TC-API-03: Delete Note via API (PARALLEL SAFE)
+#  TC-API-03: Delete Note via API (PARALLEL SAFE)
 # =========================================================
 
 @pytest.mark.api
@@ -24,7 +24,7 @@ def test_delete_note_api():
 
     api = APIClient(config["api_base_url"], logger)
 
-    # 🔐 LOGIN STEP
+    #  LOGIN STEP
     with allure.step("Login to API"):
         login_resp = api.login(
             config["credentials"]["username"],
@@ -33,18 +33,18 @@ def test_delete_note_api():
 
         assert login_resp.status_code == 200
 
-    # 📥 CREATE UNIQUE NOTE (PARALLEL SAFE FIX)
+    # CREATE UNIQUE NOTE (PARALLEL SAFE FIX)
     with allure.step("Create a fresh note for deletion"):
 
         unique_title = f"Delete_Test_{int(time.time() * 1000)}"
 
         create_resp = api.create_note(
-            category="Home",   # ✅ FIX: required field
+            category="Home",   
             title=unique_title,
             description="Temp note for delete test"
         )
 
-        # 🔥 SAFE CHECK (avoid JSON crash)
+        #  SAFE CHECK (avoid JSON crash)
         assert create_resp.status_code in [200, 201], \
             f"Create failed: {create_resp.text}"
 
@@ -62,7 +62,7 @@ def test_delete_note_api():
             attachment_type=allure.attachment_type.JSON
         )
 
-    # 🗑 DELETE NOTE STEP
+    #  DELETE NOTE STEP
     with allure.step("Delete note via API"):
 
         delete_response = api.delete_note(note_id)
@@ -78,7 +78,7 @@ def test_delete_note_api():
         assert delete_response.status_code in [200, 204], \
             f"Unexpected status code: {delete_response.status_code} | {delete_response.text}"
 
-    # 📊 VERIFY DELETION
+    #  VERIFY DELETION
     with allure.step("Verify note is deleted"):
 
         verify_response = api.get_notes()

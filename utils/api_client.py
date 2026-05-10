@@ -9,7 +9,7 @@ class APIClient:
         self.token = None
         self.logger = logger
 
-    # 🔐 LOGIN API
+    #  LOGIN API
     def login(self, email, password):
 
         url = f"{self.base_url}/users/login"
@@ -41,11 +41,11 @@ class APIClient:
 
         return response
 
-    # 🔹 TOKEN HANDLING (IMPORTANT FIX)
+    #  TOKEN HANDLING (IMPORTANT FIX)
     def set_token(self, token):
         self.token = token
 
-    # 🔹 HEADERS
+    #  HEADERS
     def get_headers(self):
         headers = {}
 
@@ -54,7 +54,7 @@ class APIClient:
 
         return headers
     
-    # 📥 GET NOTES
+    #  GET NOTES
     def get_notes(self):
 
         url = f"{self.base_url}/notes"
@@ -74,7 +74,7 @@ class APIClient:
 
         return response
 
-    # 🗑️ DELETE NOTE
+    #  DELETE NOTE
     def delete_note(self, note_id):
 
         url = f"{self.base_url}/notes/{note_id}"
@@ -94,7 +94,7 @@ class APIClient:
 
         return response
 
-    # 🔥 SAFE LOGGER
+    #  SAFE LOGGER
     def _log(self, message):
         if self.logger:
             self.logger.info(message)
@@ -118,7 +118,7 @@ class APIClient:
 
         return response
     
-    # 📌 CREATE NOTE (CORRECT)
+    #  CREATE NOTE (CORRECT)
     def create_note(self, category, title, description):
 
         url = f"{self.base_url}/notes"
@@ -147,4 +147,4 @@ class APIClient:
         self._log(f"[CREATE NOTE RESPONSE TIME] {response.response_time:.3f}s")
         self._log(f"[CREATE NOTE BODY] {response.text}")
 
-        return response   # ✅ ONLY RETURN RESPONSE
+        return response 

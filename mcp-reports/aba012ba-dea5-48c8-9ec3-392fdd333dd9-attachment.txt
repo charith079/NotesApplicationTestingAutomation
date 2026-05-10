@@ -1,0 +1,2 @@
+2026-05-08 11:37:58,748 | INFO | test_login | ===== TEST STARTED: LOGIN =====
+2026-05-08 11:38:08,947 | INFO | test_login | Login successful

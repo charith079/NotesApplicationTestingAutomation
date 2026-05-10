@@ -10,7 +10,7 @@ class IntelligentWaits:
         self.driver = driver
 
     # =========================================================
-    # 🔹 Normalize Locator
+    #  Normalize Locator
     # =========================================================
 
     def _normalize_locator(self, locator):
@@ -33,7 +33,7 @@ class IntelligentWaits:
         return locator
 
     # =========================================================
-    # 🔹 Wait for DOM Ready
+    #  Wait for DOM Ready
     # =========================================================
 
     def wait_for_page_load(self, timeout=20):
@@ -45,7 +45,7 @@ class IntelligentWaits:
         )
 
     # =========================================================
-    # 🔹 Wait for AJAX Requests
+    #  Wait for AJAX Requests
     # =========================================================
 
     def wait_for_ajax(self, timeout=20):
@@ -64,7 +64,7 @@ class IntelligentWaits:
             pass
 
     # =========================================================
-    # 🔹 Smart Visible Wait
+    #  Smart Visible Wait
     # =========================================================
 
     def smart_wait_visible(self, locator, timeout=15):
@@ -80,7 +80,7 @@ class IntelligentWaits:
         )
 
     # =========================================================
-    # 🔹 Smart Clickable Wait
+    # Smart Clickable Wait
     # =========================================================
 
     def smart_wait_clickable(self, locator, timeout=15):
@@ -96,7 +96,7 @@ class IntelligentWaits:
         )
 
     # =========================================================
-    # 🔹 Wait for Text
+    #  Wait for Text
     # =========================================================
 
     def wait_for_text(
@@ -115,7 +115,7 @@ class IntelligentWaits:
         )
 
     # =========================================================
-    # 🔹 Wait for Element Stability
+    #  Wait for Element Stability
     # =========================================================
 
     def wait_for_element_stable(
@@ -146,7 +146,7 @@ class IntelligentWaits:
         return False
 
     # =========================================================
-    # 🔹 Wait for DOM Stability
+    #  Wait for DOM Stability
     # =========================================================
 
     def wait_for_dom_stability(self, wait_time=1):
@@ -161,7 +161,7 @@ class IntelligentWaits:
         time.sleep(wait_time)
 
     # =========================================================
-    # 🔹 Generic Stability Wait
+    #  Generic Stability Wait
     # =========================================================
 
     def wait_for_stability(self, seconds=1):
@@ -169,7 +169,7 @@ class IntelligentWaits:
         time.sleep(seconds)
 
     # =========================================================
-    # 🔹 Loader Wait
+    #  Loader Wait
     # =========================================================
 
     def wait_for_loader_to_disappear(

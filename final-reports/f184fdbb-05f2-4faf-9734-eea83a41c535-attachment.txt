@@ -1,9 +1,0 @@
-[32mINFO    [0m WDM:logger.py:11 xdist worker is: gw0
-[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
-[32mINFO    [0m WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
-[32mINFO    [0m WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
-[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\charith reddy\.wdm\gw0\drivers\chromedriver\win64\147.0.7727.117\chromedriver-win32/chromedriver.exe] found in cache
-[32mINFO    [0m test_invalid_login_TC-UI-02:test_login_negative.py:30 ===== TEST STARTED: TC-UI-02 =====
-[32mINFO    [0m test_invalid_login_TC-UI-02:test_login_negative.py:50 Error message displayed: Incorrect email address or password
-[32mINFO    [0m test_invalid_login_TC-UI-02:test_login_negative.py:57 TC-UI-02 executed successfully
-[32mINFO    [0m test_invalid_login_TC-UI-02:test_login_negative.py:58 ===== TEST COMPLETED: TC-UI-02 =====

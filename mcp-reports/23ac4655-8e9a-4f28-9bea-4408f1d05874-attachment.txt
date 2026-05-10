@@ -1,0 +1,8 @@
+[HEALING] Trying locator: ('id', 'email')
+[HEALING SUCCESS] ('id', 'email')
+[HEALING] Trying locator: ('css selector', "[data-testid='login-submit']")
+[HEALING SUCCESS] ('css selector', "[data-testid='login-submit']")
+[HEALING] Trying locator: ('css selector', "[data-testid='login-submit']")
+[HEALING SUCCESS] ('css selector', "[data-testid='login-submit']")
+[HEALING] Trying locator: ('css selector', "[data-testid='home']")
+[HEALING FAILED] ('css selector', "[data-testid='home']")

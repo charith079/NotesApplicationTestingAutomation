@@ -1,0 +1,93 @@
+2026-05-10 22:09:27,523 | INFO | test_invalid_login_TC-UI-03 | ===== TEST STARTED: TC-UI-03 =====
+2026-05-10 22:09:33,080 | INFO | test_invalid_login_TC-UI-03 | LoginPage initialized
+2026-05-10 22:09:33,080 | INFO | test_invalid_login_TC-UI-03 | LoginPage initialized
+2026-05-10 22:09:33,080 | INFO | test_invalid_login_TC-UI-03 | NotesPage initialized
+2026-05-10 22:09:33,080 | INFO | test_invalid_login_TC-UI-03 | NotesPage initialized
+2026-05-10 22:09:33,080 | INFO | test_invalid_login_TC-UI-03 | Navigating to login page
+2026-05-10 22:09:33,081 | INFO | test_invalid_login_TC-UI-03 | Waiting for page load
+2026-05-10 22:09:33,101 | INFO | test_invalid_login_TC-UI-03 | Page loaded successfully
+2026-05-10 22:09:33,103 | INFO | test_invalid_login_TC-UI-03 | Clicking element: [('xpath', "//a[contains(text(),'Login')]"), ('link text', 'Login'), ('partial link text', 'Log')]
+2026-05-10 22:09:33,180 | INFO | test_invalid_login_TC-UI-03 | Waiting for clickable element: [('xpath', "//a[contains(text(),'Login')]"), ('link text', 'Login'), ('partial link text', 'Log')]
+2026-05-10 22:09:33,181 | INFO | test_invalid_login_TC-UI-03 | [HEALING] Trying locator: ('xpath', "//a[contains(text(),'Login')]")
+2026-05-10 22:09:33,425 | INFO | test_invalid_login_TC-UI-03 | [HEALING SUCCESS] ('xpath', "//a[contains(text(),'Login')]")
+2026-05-10 22:09:33,425 | INFO | test_invalid_login_TC-UI-03 | Element clickable: [('xpath', "//a[contains(text(),'Login')]"), ('link text', 'Login'), ('partial link text', 'Log')]
+2026-05-10 22:09:43,590 | INFO | test_invalid_login_TC-UI-03 | Normal click successful
+2026-05-10 22:09:43,591 | INFO | test_invalid_login_TC-UI-03 | Successfully navigated to login page
+2026-05-10 22:09:43,591 | INFO | test_invalid_login_TC-UI-03 | Starting login process
+2026-05-10 22:09:43,591 | INFO | test_invalid_login_TC-UI-03 | Waiting for email field
+2026-05-10 22:09:43,591 | INFO | test_invalid_login_TC-UI-03 | Waiting for visible element: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:09:43,591 | INFO | test_invalid_login_TC-UI-03 | [HEALING] Trying locator: ('id', 'email')
+2026-05-10 22:09:43,767 | INFO | test_invalid_login_TC-UI-03 | [HEALING SUCCESS] ('id', 'email')
+2026-05-10 22:09:43,767 | INFO | test_invalid_login_TC-UI-03 | Element visible: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:09:43,768 | INFO | test_invalid_login_TC-UI-03 | Waiting for DOM stability
+2026-05-10 22:09:43,768 | INFO | test_invalid_login_TC-UI-03 | Waiting for DOM stability
+2026-05-10 22:09:44,769 | INFO | test_invalid_login_TC-UI-03 | DOM stable
+2026-05-10 22:09:44,769 | INFO | test_invalid_login_TC-UI-03 | Entering username: charithreddy2004@gmail.com
+2026-05-10 22:09:44,769 | INFO | test_invalid_login_TC-UI-03 | Sending text to element: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:09:44,770 | INFO | test_invalid_login_TC-UI-03 | Input text: charithreddy2004@gmail.com
+2026-05-10 22:09:44,834 | INFO | test_invalid_login_TC-UI-03 | Waiting for visible element: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:09:44,835 | INFO | test_invalid_login_TC-UI-03 | [HEALING] Trying locator: ('id', 'email')
+2026-05-10 22:09:44,935 | INFO | test_invalid_login_TC-UI-03 | [HEALING SUCCESS] ('id', 'email')
+2026-05-10 22:09:44,935 | INFO | test_invalid_login_TC-UI-03 | Element visible: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:09:46,191 | INFO | test_invalid_login_TC-UI-03 | Text entered successfully
+2026-05-10 22:09:46,191 | INFO | test_invalid_login_TC-UI-03 | Entering password
+2026-05-10 22:09:46,192 | INFO | test_invalid_login_TC-UI-03 | Sending text to element: [('id', 'password'), ('name', 'password'), ('css selector', "[data-testid='login-password']"), ('css selector', "input[type='password']"), ('xpath', "//input[@id='password']")]
+2026-05-10 22:09:46,192 | INFO | test_invalid_login_TC-UI-03 | Input text: wrongpassword
+2026-05-10 22:09:46,214 | INFO | test_invalid_login_TC-UI-03 | Waiting for visible element: [('id', 'password'), ('name', 'password'), ('css selector', "[data-testid='login-password']"), ('css selector', "input[type='password']"), ('xpath', "//input[@id='password']")]
+2026-05-10 22:09:46,215 | INFO | test_invalid_login_TC-UI-03 | [HEALING] Trying locator: ('id', 'password')
+2026-05-10 22:09:46,375 | INFO | test_invalid_login_TC-UI-03 | [HEALING SUCCESS] ('id', 'password')
+2026-05-10 22:09:46,375 | INFO | test_invalid_login_TC-UI-03 | Element visible: [('id', 'password'), ('name', 'password'), ('css selector', "[data-testid='login-password']"), ('css selector', "input[type='password']"), ('xpath', "//input[@id='password']")]
+2026-05-10 22:09:47,620 | INFO | test_invalid_login_TC-UI-03 | Text entered successfully
+2026-05-10 22:09:47,620 | INFO | test_invalid_login_TC-UI-03 | Waiting for login button
+2026-05-10 22:09:47,621 | INFO | test_invalid_login_TC-UI-03 | Waiting for clickable element: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:09:47,621 | INFO | test_invalid_login_TC-UI-03 | [HEALING] Trying locator: ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:09:47,719 | INFO | test_invalid_login_TC-UI-03 | [HEALING SUCCESS] ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:09:47,720 | INFO | test_invalid_login_TC-UI-03 | Element clickable: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:09:47,720 | INFO | test_invalid_login_TC-UI-03 | Clicking login button
+2026-05-10 22:09:47,720 | INFO | test_invalid_login_TC-UI-03 | Safe clicking element: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:09:47,721 | INFO | test_invalid_login_TC-UI-03 | Waiting for clickable element: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:09:47,721 | INFO | test_invalid_login_TC-UI-03 | [HEALING] Trying locator: ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:09:47,881 | INFO | test_invalid_login_TC-UI-03 | [HEALING SUCCESS] ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:09:47,882 | INFO | test_invalid_login_TC-UI-03 | Element clickable: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:09:47,969 | INFO | test_invalid_login_TC-UI-03 | Safe click successful
+2026-05-10 22:09:47,969 | INFO | test_invalid_login_TC-UI-03 | Waiting for page load after login
+2026-05-10 22:09:47,970 | INFO | test_invalid_login_TC-UI-03 | Waiting for page load
+2026-05-10 22:09:48,043 | INFO | test_invalid_login_TC-UI-03 | Page loaded successfully
+2026-05-10 22:09:48,044 | INFO | test_invalid_login_TC-UI-03 | Login process completed
+2026-05-10 22:09:48,044 | INFO | test_invalid_login_TC-UI-03 | Fetching login error message
+2026-05-10 22:09:48,861 | ERROR | test_invalid_login_TC-UI-03 | Login error displayed: Incorrect email address or password
+2026-05-10 22:09:48,861 | INFO | test_invalid_login_TC-UI-03 | Error message displayed: Incorrect email address or password
+2026-05-10 22:09:48,862 | INFO | test_invalid_login_TC-UI-03 | Validating Notes dashboard
+2026-05-10 22:09:48,862 | INFO | test_invalid_login_TC-UI-03 | Waiting for page load
+2026-05-10 22:09:48,927 | INFO | test_invalid_login_TC-UI-03 | Page loaded successfully
+2026-05-10 22:09:48,927 | INFO | test_invalid_login_TC-UI-03 | Waiting for visible element: ('css selector', "[data-testid='home']")
+2026-05-10 22:09:48,927 | INFO | test_invalid_login_TC-UI-03 | [HEALING] Trying locator: ('css selector', "[data-testid='home']")
+2026-05-10 22:09:59,292 | WARNING | test_invalid_login_TC-UI-03 | [HEALING FAILED] ('css selector', "[data-testid='home']")
+2026-05-10 22:09:59,292 | WARNING | test_invalid_login_TC-UI-03 | [MCP HEALING] All locators failed. Asking AI...
+2026-05-10 22:10:03,912 | INFO | test_invalid_login_TC-UI-03 | 🚨 MCP AI RESPONSE:
+{'xpath': "//a[@data-testid='home']", 'css': "a[data-testid='home']", 'reason': "The original CSS selector was generic and could match any element with data-testid='home'. By inspecting the page context and typical navigation patterns, adding the 'a' tag to both XPath and CSS selectors increases specificity and reduces the chance of matching unintended elements. This ensures the locator targets anchor tags specifically, which are commonly used for navigation links like a 'home' button."}
+2026-05-10 22:10:03,912 | INFO | test_invalid_login_TC-UI-03 | [MCP HEALING] Trying AI locator: //a[@data-testid='home']
+2026-05-10 22:10:03,912 | ERROR | test_invalid_login_TC-UI-03 | [MCP HEALING FAILED] AI also failed: WebDriver.find_element() takes from 1 to 3 positional arguments but 25 were given
+2026-05-10 22:10:03,912 | ERROR | test_invalid_login_TC-UI-03 | Dashboard validation failed: Message: 
+Stacktrace:
+#0 0x561e0b7ceb6a <unknown>
+#1 0x561e0b1d0265 <unknown>
+#2 0x561e0b222f76 <unknown>
+#3 0x561e0b2231b1 <unknown>
+#4 0x561e0b26e7d4 <unknown>
+#5 0x561e0b26b969 <unknown>
+#6 0x561e0b2165cf <unknown>
+#7 0x561e0b217391 <unknown>
+#8 0x561e0b79404b <unknown>
+#9 0x561e0b79700d <unknown>
+#10 0x561e0b780808 <unknown>
+#11 0x561e0b797ba0 <unknown>
+#12 0x561e0b767280 <unknown>
+#13 0x561e0b7bbdb8 <unknown>
+#14 0x561e0b7bbf88 <unknown>
+#15 0x561e0b7cd5de <unknown>
+#16 0x7fa5bb0aeaa4 <unknown>
+#17 0x7fa5bb13bc6c <unknown>
+
+2026-05-10 22:10:03,912 | INFO | test_invalid_login_TC-UI-03 | TC-UI-03 executed successfully
+2026-05-10 22:10:03,912 | INFO | test_invalid_login_TC-UI-03 | ===== TEST COMPLETED: TC-UI-03 =====

@@ -1,5 +1,0 @@
-2026-05-07 12:33:33,264 | INFO | NotesTest | ===== TEST STARTED: Create Note =====
-2026-05-07 12:33:33,266 | INFO | NotesTest | Opening application URL
-2026-05-07 12:33:52,361 | INFO | NotesTest | Navigating to login page
-2026-05-07 12:34:02,476 | INFO | NotesTest | Performing login
-2026-05-07 12:34:04,087 | INFO | NotesTest | Validating home page load

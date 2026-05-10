@@ -3,10 +3,20 @@ pipeline {
 
     environment {
         GRID_URL = "http://localhost:4444/wd/hub"
+        PYTHONUNBUFFERED = "1"
+    }
+
+    options {
+        timestamps()
+        ansiColor('xterm')
+        buildDiscarder(logRotator(numToKeepStr: '10'))
     }
 
     stages {
 
+        // =========================================================
+        // Checkout Source Code
+        // =========================================================
         stage('Checkout Code') {
             steps {
                 git branch: 'master',
@@ -14,25 +24,55 @@ pipeline {
             }
         }
 
+        // =========================================================
+        // Start Selenium Grid
+        // =========================================================
         stage('Start Selenium Grid using Docker') {
             steps {
                 bat '''
+                echo ==========================================
+                echo Starting Selenium Grid...
+                echo ==========================================
+
                 docker-compose down --remove-orphans
-                docker rm -f selenium-hub chrome firefox || exit 0
+                docker rm -f selenium-hub chrome firefox >nul 2>&1
+
                 docker-compose up -d
+
+                docker ps
                 '''
             }
         }
 
+        // =========================================================
+        // Wait Until Grid Is Ready
+        // =========================================================
         stage('Wait for Selenium Grid') {
             steps {
                 bat '''
                 echo Waiting for Selenium Grid...
 
-                powershell -Command "$url='http://localhost:4444/status'; for ($i=0; $i -lt 30; $i++) { try { $r=Invoke-WebRequest $url -UseBasicParsing; if ($r.StatusCode -eq 200) { Write-Output 'Grid is UP'; exit 0 } } catch { } Start-Sleep -Seconds 5 }; Write-Output 'Grid NOT ready'; exit 1"
+                powershell -Command ^
+                "$url='http://localhost:4444/status'; ^
+                for ($i=0; $i -lt 30; $i++) { ^
+                    try { ^
+                        $r=Invoke-WebRequest $url -UseBasicParsing; ^
+                        if ($r.StatusCode -eq 200) { ^
+                            Write-Output 'Grid is UP'; ^
+                            exit 0 ^
+                        } ^
+                    } catch { } ^
+                    Start-Sleep -Seconds 5 ^
+                }; ^
+                Write-Output 'Grid NOT ready'; ^
+                exit 1"
                 '''
             }
         }
+
+        // =========================================================
+        // Install Dependencies
+        // =========================================================
         stage('Install Dependencies') {
             steps {
                 bat '''
@@ -42,41 +82,88 @@ pipeline {
             }
         }
 
+        // =========================================================
+        // Create Required Folders
+        // =========================================================
         stage('Create Folders') {
             steps {
                 bat '''
                 if not exist Reports mkdir Reports
-                if not exist Screenshots mkdir Screenshots
-                if not exist Logs mkdir Logs
+                if not exist screenshots mkdir screenshots
+                if not exist logs mkdir logs
                 if not exist allure-results mkdir allure-results
                 '''
             }
         }
 
-        stage('Run Parallel Tests on Docker Grid (4 Workers)') {
+        // =========================================================
+        // Run Tests
+        // =========================================================
+        stage('Run Parallel Tests on Docker Grid') {
             steps {
+
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+
                     bat '''
+                    echo ==========================================
+                    echo Running Pytest Automation Suite
+                    echo ==========================================
+
                     set GRID_URL=http://localhost:4444/wd/hub
+
                     pytest -n 4 ^
                     --html=Reports/report.html ^
                     --self-contained-html ^
+                    --capture=tee-sys ^
                     --alluredir=allure-results
                     '''
                 }
             }
         }
 
-        stage('Archive Results') {
+        // =========================================================
+        // Publish HTML Report
+        // =========================================================
+        stage('Publish HTML Report') {
             steps {
-                archiveArtifacts artifacts: 'Reports/*', allowEmptyArchive: true
-                archiveArtifacts artifacts: 'Screenshots/*', allowEmptyArchive: true
-                archiveArtifacts artifacts: 'Logs/*', allowEmptyArchive: true
+
+                publishHTML([
+                    allowMissing: true,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'Reports',
+                    reportFiles: 'report.html',
+                    reportName: 'PyTest HTML Report'
+                ])
             }
         }
 
+        // =========================================================
+        // Archive Reports / Screenshots / Logs
+        // =========================================================
+        stage('Archive Test Artifacts') {
+            steps {
+
+                archiveArtifacts artifacts: 'Reports/**/*',
+                                 allowEmptyArchive: true
+
+                archiveArtifacts artifacts: 'screenshots/**/*',
+                                 allowEmptyArchive: true
+
+                archiveArtifacts artifacts: 'logs/**/*',
+                                 allowEmptyArchive: true
+
+                archiveArtifacts artifacts: 'allure-results/**/*',
+                                 allowEmptyArchive: true
+            }
+        }
+
+        // =========================================================
+        // Generate Allure Report
+        // =========================================================
         stage('Allure Report') {
             steps {
+
                 allure([
                     includeProperties: false,
                     jdk: '',
@@ -87,17 +174,30 @@ pipeline {
         }
     }
 
+    // =============================================================
+    // Post Actions
+    // =============================================================
     post {
+
         always {
-            bat 'docker-compose down'
+
+            echo "Stopping Docker Grid..."
+
+            bat '''
+            docker-compose down
+            '''
         }
 
         success {
             echo "Tests Passed Successfully"
         }
 
+        unstable {
+            echo "Some Tests Failed - Check Reports"
+        }
+
         failure {
-            echo "Tests Failed - Check Reports"
+            echo "Build Failed"
         }
     }
 }

@@ -10,3 +10,6 @@ browser: chrome   # chrome | firefox | edge
 credentials:
   username: charithreddy2004@gmail.com
   password: Charith@2004
+
+openai:
+  api_key: ak_2AA5jV2wf3UL18J3aL6wQ1Db6fl4e

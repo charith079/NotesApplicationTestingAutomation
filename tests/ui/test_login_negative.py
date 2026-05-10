@@ -33,8 +33,8 @@ def test_invalid_login(driver, username, password, tc_id):
     with allure.step("Open application"):
         driver.get(config["base_url"])
 
-    login_page = LoginPage(driver)
-    notes_page = NotesPage(driver)
+    login_page = LoginPage(driver,logger)
+    notes_page = NotesPage(driver , logger)
 
     # 🔹 Navigate to login page
     with allure.step("Navigate to login page"):

@@ -1,0 +1,107 @@
+2026-05-10 22:08:18,831 | INFO | TC-NEG-01 | ===== TC-NEG-01 STARTED =====
+2026-05-10 22:08:18,831 | INFO | TC-NEG-01 | LoginPage initialized
+2026-05-10 22:08:18,832 | INFO | TC-NEG-01 | LoginPage initialized
+2026-05-10 22:08:18,832 | INFO | TC-NEG-01 | NotesPage initialized
+2026-05-10 22:08:18,832 | INFO | TC-NEG-01 | NotesPage initialized
+2026-05-10 22:08:23,056 | INFO | TC-NEG-01 | Application opened
+2026-05-10 22:08:23,058 | INFO | TC-NEG-01 | Navigating to login page
+2026-05-10 22:08:23,058 | INFO | TC-NEG-01 | Waiting for page load
+2026-05-10 22:08:23,107 | INFO | TC-NEG-01 | Page loaded successfully
+2026-05-10 22:08:23,108 | INFO | TC-NEG-01 | Clicking element: [('xpath', "//a[contains(text(),'Login')]"), ('link text', 'Login'), ('partial link text', 'Log')]
+2026-05-10 22:08:23,165 | INFO | TC-NEG-01 | Waiting for clickable element: [('xpath', "//a[contains(text(),'Login')]"), ('link text', 'Login'), ('partial link text', 'Log')]
+2026-05-10 22:08:23,166 | INFO | TC-NEG-01 | [HEALING] Trying locator: ('xpath', "//a[contains(text(),'Login')]")
+2026-05-10 22:08:23,536 | INFO | TC-NEG-01 | [HEALING SUCCESS] ('xpath', "//a[contains(text(),'Login')]")
+2026-05-10 22:08:23,537 | INFO | TC-NEG-01 | Element clickable: [('xpath', "//a[contains(text(),'Login')]"), ('link text', 'Login'), ('partial link text', 'Log')]
+2026-05-10 22:08:31,236 | INFO | TC-NEG-01 | Normal click successful
+2026-05-10 22:08:31,237 | INFO | TC-NEG-01 | Successfully navigated to login page
+2026-05-10 22:08:31,237 | INFO | TC-NEG-01 | Starting login process
+2026-05-10 22:08:31,237 | INFO | TC-NEG-01 | Waiting for email field
+2026-05-10 22:08:31,238 | INFO | TC-NEG-01 | Waiting for visible element: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:08:31,238 | INFO | TC-NEG-01 | [HEALING] Trying locator: ('id', 'email')
+2026-05-10 22:08:31,350 | INFO | TC-NEG-01 | [HEALING SUCCESS] ('id', 'email')
+2026-05-10 22:08:31,350 | INFO | TC-NEG-01 | Element visible: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:08:31,350 | INFO | TC-NEG-01 | Waiting for DOM stability
+2026-05-10 22:08:31,350 | INFO | TC-NEG-01 | Waiting for DOM stability
+2026-05-10 22:08:32,351 | INFO | TC-NEG-01 | DOM stable
+2026-05-10 22:08:32,351 | INFO | TC-NEG-01 | Entering username: charithreddy2004@gmail.com
+2026-05-10 22:08:32,352 | INFO | TC-NEG-01 | Sending text to element: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:08:32,352 | INFO | TC-NEG-01 | Input text: charithreddy2004@gmail.com
+2026-05-10 22:08:32,464 | INFO | TC-NEG-01 | Waiting for visible element: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:08:32,464 | INFO | TC-NEG-01 | [HEALING] Trying locator: ('id', 'email')
+2026-05-10 22:08:32,572 | INFO | TC-NEG-01 | [HEALING SUCCESS] ('id', 'email')
+2026-05-10 22:08:32,572 | INFO | TC-NEG-01 | Element visible: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:08:34,032 | INFO | TC-NEG-01 | Text entered successfully
+2026-05-10 22:08:34,033 | INFO | TC-NEG-01 | Entering password
+2026-05-10 22:08:34,034 | INFO | TC-NEG-01 | Sending text to element: [('id', 'password'), ('name', 'password'), ('css selector', "[data-testid='login-password']"), ('css selector', "input[type='password']"), ('xpath', "//input[@id='password']")]
+2026-05-10 22:08:34,034 | INFO | TC-NEG-01 | Input text: Charith@2004
+2026-05-10 22:08:34,064 | INFO | TC-NEG-01 | Waiting for visible element: [('id', 'password'), ('name', 'password'), ('css selector', "[data-testid='login-password']"), ('css selector', "input[type='password']"), ('xpath', "//input[@id='password']")]
+2026-05-10 22:08:34,065 | INFO | TC-NEG-01 | [HEALING] Trying locator: ('id', 'password')
+2026-05-10 22:08:34,281 | INFO | TC-NEG-01 | [HEALING SUCCESS] ('id', 'password')
+2026-05-10 22:08:34,281 | INFO | TC-NEG-01 | Element visible: [('id', 'password'), ('name', 'password'), ('css selector', "[data-testid='login-password']"), ('css selector', "input[type='password']"), ('xpath', "//input[@id='password']")]
+2026-05-10 22:08:35,546 | INFO | TC-NEG-01 | Text entered successfully
+2026-05-10 22:08:35,547 | INFO | TC-NEG-01 | Waiting for login button
+2026-05-10 22:08:35,548 | INFO | TC-NEG-01 | Waiting for clickable element: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:08:35,548 | INFO | TC-NEG-01 | [HEALING] Trying locator: ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:08:35,657 | INFO | TC-NEG-01 | [HEALING SUCCESS] ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:08:35,657 | INFO | TC-NEG-01 | Element clickable: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:08:35,658 | INFO | TC-NEG-01 | Clicking login button
+2026-05-10 22:08:35,658 | INFO | TC-NEG-01 | Safe clicking element: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:08:35,658 | INFO | TC-NEG-01 | Waiting for clickable element: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:08:35,659 | INFO | TC-NEG-01 | [HEALING] Trying locator: ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:08:35,912 | INFO | TC-NEG-01 | [HEALING SUCCESS] ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:08:35,912 | INFO | TC-NEG-01 | Element clickable: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:08:35,989 | INFO | TC-NEG-01 | Safe click successful
+2026-05-10 22:08:35,989 | INFO | TC-NEG-01 | Waiting for page load after login
+2026-05-10 22:08:35,990 | INFO | TC-NEG-01 | Waiting for page load
+2026-05-10 22:08:36,036 | INFO | TC-NEG-01 | Page loaded successfully
+2026-05-10 22:08:36,036 | INFO | TC-NEG-01 | Login process completed
+2026-05-10 22:08:36,038 | INFO | TC-NEG-01 | Validating Notes dashboard
+2026-05-10 22:08:36,038 | INFO | TC-NEG-01 | Waiting for page load
+2026-05-10 22:08:36,120 | INFO | TC-NEG-01 | Page loaded successfully
+2026-05-10 22:08:36,120 | INFO | TC-NEG-01 | Waiting for visible element: ('css selector', "[data-testid='home']")
+2026-05-10 22:08:36,121 | INFO | TC-NEG-01 | [HEALING] Trying locator: ('css selector', "[data-testid='home']")
+2026-05-10 22:08:37,180 | INFO | TC-NEG-01 | [HEALING SUCCESS] ('css selector', "[data-testid='home']")
+2026-05-10 22:08:37,181 | INFO | TC-NEG-01 | Element visible: ('css selector', "[data-testid='home']")
+2026-05-10 22:08:37,181 | INFO | TC-NEG-01 | Waiting for visible element: ('css selector', "[data-testid='logout']")
+2026-05-10 22:08:37,181 | INFO | TC-NEG-01 | [HEALING] Trying locator: ('css selector', "[data-testid='logout']")
+2026-05-10 22:08:37,283 | INFO | TC-NEG-01 | [HEALING SUCCESS] ('css selector', "[data-testid='logout']")
+2026-05-10 22:08:37,284 | INFO | TC-NEG-01 | Element visible: ('css selector', "[data-testid='logout']")
+2026-05-10 22:08:37,284 | INFO | TC-NEG-01 | Dashboard loaded successfully
+2026-05-10 22:08:37,285 | INFO | TC-NEG-01 | Starting note creation
+2026-05-10 22:08:37,285 | INFO | TC-NEG-01 | Category: Home, Title: 
+2026-05-10 22:08:37,285 | INFO | TC-NEG-01 | Waiting for DOM stability
+2026-05-10 22:08:38,286 | INFO | TC-NEG-01 | DOM stable
+2026-05-10 22:08:38,286 | INFO | TC-NEG-01 | Clicking Add Note button
+2026-05-10 22:08:38,287 | INFO | TC-NEG-01 | Safe clicking element: ('css selector', "[data-testid='add-new-note']")
+2026-05-10 22:08:38,287 | INFO | TC-NEG-01 | Waiting for clickable element: ('css selector', "[data-testid='add-new-note']")
+2026-05-10 22:08:38,288 | INFO | TC-NEG-01 | [HEALING] Trying locator: ('css selector', "[data-testid='add-new-note']")
+2026-05-10 22:08:38,406 | INFO | TC-NEG-01 | [HEALING SUCCESS] ('css selector', "[data-testid='add-new-note']")
+2026-05-10 22:08:38,406 | INFO | TC-NEG-01 | Element clickable: ('css selector', "[data-testid='add-new-note']")
+2026-05-10 22:08:38,640 | INFO | TC-NEG-01 | Safe click successful
+2026-05-10 22:08:38,640 | INFO | TC-NEG-01 | Waiting for note modal
+2026-05-10 22:08:38,641 | INFO | TC-NEG-01 | Waiting for visible element: ('css selector', "[data-testid='note-category']")
+2026-05-10 22:08:38,641 | INFO | TC-NEG-01 | [HEALING] Trying locator: ('css selector', "[data-testid='note-category']")
+2026-05-10 22:08:38,726 | INFO | TC-NEG-01 | [HEALING SUCCESS] ('css selector', "[data-testid='note-category']")
+2026-05-10 22:08:38,727 | INFO | TC-NEG-01 | Element visible: ('css selector', "[data-testid='note-category']")
+2026-05-10 22:08:38,728 | INFO | TC-NEG-01 | Selecting category: Home
+2026-05-10 22:08:38,728 | INFO | TC-NEG-01 | Finding element: ('css selector', "[data-testid='note-category']")
+2026-05-10 22:08:38,728 | INFO | TC-NEG-01 | [HEALING] Trying locator: ('css selector', "[data-testid='note-category']")
+2026-05-10 22:08:38,766 | INFO | TC-NEG-01 | [HEALING SUCCESS] ('css selector', "[data-testid='note-category']")
+2026-05-10 22:08:38,766 | INFO | TC-NEG-01 | Element found: ('css selector', "[data-testid='note-category']")
+2026-05-10 22:08:39,078 | WARNING | TC-NEG-01 | Title field left empty
+2026-05-10 22:08:39,079 | WARNING | TC-NEG-01 | Description field left empty
+2026-05-10 22:08:39,079 | INFO | TC-NEG-01 | Submitting note
+2026-05-10 22:08:39,079 | INFO | TC-NEG-01 | Safe clicking element: ('css selector', "[data-testid='note-submit']")
+2026-05-10 22:08:39,079 | INFO | TC-NEG-01 | Waiting for clickable element: ('css selector', "[data-testid='note-submit']")
+2026-05-10 22:08:39,079 | INFO | TC-NEG-01 | [HEALING] Trying locator: ('css selector', "[data-testid='note-submit']")
+2026-05-10 22:08:39,194 | INFO | TC-NEG-01 | [HEALING SUCCESS] ('css selector', "[data-testid='note-submit']")
+2026-05-10 22:08:39,194 | INFO | TC-NEG-01 | Element clickable: ('css selector', "[data-testid='note-submit']")
+2026-05-10 22:08:39,292 | INFO | TC-NEG-01 | Safe click successful
+2026-05-10 22:08:39,292 | INFO | TC-NEG-01 | Empty note submission attempted
+2026-05-10 22:08:39,292 | INFO | TC-NEG-01 | Fetching validation error for field: title
+2026-05-10 22:08:39,462 | WARNING | TC-NEG-01 | title validation error: Title is required
+2026-05-10 22:08:39,462 | INFO | TC-NEG-01 | Fetching validation error for field: description
+2026-05-10 22:08:39,688 | WARNING | TC-NEG-01 | description validation error: Description is required
+2026-05-10 22:08:39,689 | INFO | TC-NEG-01 | Title Error: Title is required
+2026-05-10 22:08:39,689 | INFO | TC-NEG-01 | Description Error: Description is required
+2026-05-10 22:08:39,689 | INFO | TC-NEG-01 | ===== TC-NEG-01 COMPLETED =====

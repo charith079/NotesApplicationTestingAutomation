@@ -1,1 +1,0 @@
-{"success":true,"status":200,"message":"Note successfully deleted"}

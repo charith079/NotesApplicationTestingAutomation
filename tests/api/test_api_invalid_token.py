@@ -19,7 +19,7 @@ def test_invalid_api_token():
 
     client = APIClient(config["api_base_url"], logger)
 
-    # 🔹 STEP 1: VALID LOGIN (baseline)
+    #  STEP 1: VALID LOGIN (baseline)
     login_resp = client.login(
         config["credentials"]["username"],
         config["credentials"]["password"]
@@ -27,7 +27,7 @@ def test_invalid_api_token():
 
     assert login_resp.status_code == 200
 
-    # 🔴 STEP 2: FORCE INVALID TOKEN
+    #  STEP 2: FORCE INVALID TOKEN
     client.set_token("sfags84gsd65ds4gd")
 
     with allure.step("Send request with invalid token"):
@@ -36,7 +36,7 @@ def test_invalid_api_token():
         logger.info(f"[RESPONSE CODE] {response.status_code}")
         logger.info(f"[RESPONSE BODY] {response.text}")
 
-        # ✅ SAFE RESPONSE HANDLING (JSON or HTML)
+        #  SAFE RESPONSE HANDLING (JSON or HTML)
         try:
             response_body = response.json()
             attachment_type = allure.attachment_type.JSON
@@ -50,6 +50,6 @@ def test_invalid_api_token():
             attachment_type=attachment_type
         )
 
-    # 🔹 ASSERTION
+    #  ASSERTION
     assert response.status_code in [401, 403], \
         f"Expected 401/403 but got {response.status_code}"

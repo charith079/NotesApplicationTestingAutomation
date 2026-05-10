@@ -1,0 +1,10 @@
+[32mINFO    [0m API_TESTS:test_api_get_notes.py:65 ===== TEST STARTED: DELETE NOTE =====
+[32mINFO    [0m API_TESTS:test_api_get_notes.py:11 Initializing API Client
+[32mINFO    [0m API_TESTS:test_api_get_notes.py:15 Performing API Login
+[32mINFO    [0m API_TESTS:test_api_get_notes.py:22 API Login Successful
+[32mINFO    [0m API_TESTS:test_api_get_notes.py:69 Fetching existing notes
+[32mINFO    [0m API_TESTS:test_api_get_notes.py:81 Deleting note with ID: 6a00b4760fadc10297de03cc
+[32mINFO    [0m API_TESTS:test_api_get_notes.py:85 Delete API Response Status: 404
+[32mINFO    [0m API_TESTS:test_api_get_notes.py:90 Validating note deletion
+[32mINFO    [0m API_TESTS:test_api_get_notes.py:98 Note deletion validated successfully
+[32mINFO    [0m API_TESTS:test_api_get_notes.py:100 ===== TEST PASSED: DELETE NOTE =====

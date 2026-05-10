@@ -1,2 +1,0 @@
-2026-05-07 13:12:33,651 | INFO | TC-E2E-01 | ===== TC-E2E-01 STARTED =====
-2026-05-07 13:12:34,111 | INFO | TC-E2E-01 | Application opened

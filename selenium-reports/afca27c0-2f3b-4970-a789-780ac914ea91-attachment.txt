@@ -1,0 +1,69 @@
+2026-05-10 22:08:40,447 | INFO | test_login | ===== TEST STARTED: LOGIN =====
+2026-05-10 22:08:44,612 | INFO | test_login | LoginPage initialized
+2026-05-10 22:08:44,612 | INFO | test_login | LoginPage initialized
+2026-05-10 22:08:44,612 | INFO | test_login | NotesPage initialized
+2026-05-10 22:08:44,612 | INFO | test_login | NotesPage initialized
+2026-05-10 22:08:44,612 | INFO | test_login | Navigating to login page
+2026-05-10 22:08:44,612 | INFO | test_login | Waiting for page load
+2026-05-10 22:08:44,630 | INFO | test_login | Page loaded successfully
+2026-05-10 22:08:44,631 | INFO | test_login | Clicking element: [('xpath', "//a[contains(text(),'Login')]"), ('link text', 'Login'), ('partial link text', 'Log')]
+2026-05-10 22:08:44,689 | INFO | test_login | Waiting for clickable element: [('xpath', "//a[contains(text(),'Login')]"), ('link text', 'Login'), ('partial link text', 'Log')]
+2026-05-10 22:08:44,689 | INFO | test_login | [HEALING] Trying locator: ('xpath', "//a[contains(text(),'Login')]")
+2026-05-10 22:08:44,868 | INFO | test_login | [HEALING SUCCESS] ('xpath', "//a[contains(text(),'Login')]")
+2026-05-10 22:08:44,869 | INFO | test_login | Element clickable: [('xpath', "//a[contains(text(),'Login')]"), ('link text', 'Login'), ('partial link text', 'Log')]
+2026-05-10 22:08:48,807 | INFO | test_login | Normal click successful
+2026-05-10 22:08:48,808 | INFO | test_login | Successfully navigated to login page
+2026-05-10 22:08:48,808 | INFO | test_login | Starting login process
+2026-05-10 22:08:48,808 | INFO | test_login | Waiting for email field
+2026-05-10 22:08:48,808 | INFO | test_login | Waiting for visible element: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:08:48,808 | INFO | test_login | [HEALING] Trying locator: ('id', 'email')
+2026-05-10 22:08:49,083 | INFO | test_login | [HEALING SUCCESS] ('id', 'email')
+2026-05-10 22:08:49,083 | INFO | test_login | Element visible: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:08:49,083 | INFO | test_login | Waiting for DOM stability
+2026-05-10 22:08:49,083 | INFO | test_login | Waiting for DOM stability
+2026-05-10 22:08:50,084 | INFO | test_login | DOM stable
+2026-05-10 22:08:50,085 | INFO | test_login | Entering username: charithreddy2004@gmail.com
+2026-05-10 22:08:50,085 | INFO | test_login | Sending text to element: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:08:50,085 | INFO | test_login | Input text: charithreddy2004@gmail.com
+2026-05-10 22:08:50,137 | INFO | test_login | Waiting for visible element: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:08:50,137 | INFO | test_login | [HEALING] Trying locator: ('id', 'email')
+2026-05-10 22:08:50,234 | INFO | test_login | [HEALING SUCCESS] ('id', 'email')
+2026-05-10 22:08:50,235 | INFO | test_login | Element visible: [('id', 'email'), ('name', 'email'), ('css selector', "[data-testid='login-email']"), ('css selector', "input[type='text']"), ('xpath', "//input[@id='email']")]
+2026-05-10 22:08:51,486 | INFO | test_login | Text entered successfully
+2026-05-10 22:08:51,486 | INFO | test_login | Entering password
+2026-05-10 22:08:51,487 | INFO | test_login | Sending text to element: [('id', 'password'), ('name', 'password'), ('css selector', "[data-testid='login-password']"), ('css selector', "input[type='password']"), ('xpath', "//input[@id='password']")]
+2026-05-10 22:08:51,487 | INFO | test_login | Input text: Charith@2004
+2026-05-10 22:08:51,503 | INFO | test_login | Waiting for visible element: [('id', 'password'), ('name', 'password'), ('css selector', "[data-testid='login-password']"), ('css selector', "input[type='password']"), ('xpath', "//input[@id='password']")]
+2026-05-10 22:08:51,503 | INFO | test_login | [HEALING] Trying locator: ('id', 'password')
+2026-05-10 22:08:51,645 | INFO | test_login | [HEALING SUCCESS] ('id', 'password')
+2026-05-10 22:08:51,646 | INFO | test_login | Element visible: [('id', 'password'), ('name', 'password'), ('css selector', "[data-testid='login-password']"), ('css selector', "input[type='password']"), ('xpath', "//input[@id='password']")]
+2026-05-10 22:08:52,866 | INFO | test_login | Text entered successfully
+2026-05-10 22:08:52,866 | INFO | test_login | Waiting for login button
+2026-05-10 22:08:52,866 | INFO | test_login | Waiting for clickable element: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:08:52,866 | INFO | test_login | [HEALING] Trying locator: ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:08:52,981 | INFO | test_login | [HEALING SUCCESS] ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:08:52,981 | INFO | test_login | Element clickable: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:08:52,982 | INFO | test_login | Clicking login button
+2026-05-10 22:08:52,982 | INFO | test_login | Safe clicking element: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:08:52,982 | INFO | test_login | Waiting for clickable element: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:08:52,983 | INFO | test_login | [HEALING] Trying locator: ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:08:53,154 | INFO | test_login | [HEALING SUCCESS] ('css selector', "[data-testid='login-submit']")
+2026-05-10 22:08:53,154 | INFO | test_login | Element clickable: [('css selector', "[data-testid='login-submit']"), ('css selector', "button[type='submit']"), ('xpath', "//button[contains(text(),'Login')]")]
+2026-05-10 22:08:53,250 | INFO | test_login | Safe click successful
+2026-05-10 22:08:53,251 | INFO | test_login | Waiting for page load after login
+2026-05-10 22:08:53,251 | INFO | test_login | Waiting for page load
+2026-05-10 22:08:53,317 | INFO | test_login | Page loaded successfully
+2026-05-10 22:08:53,317 | INFO | test_login | Login process completed
+2026-05-10 22:08:53,317 | INFO | test_login | Validating Notes dashboard
+2026-05-10 22:08:53,317 | INFO | test_login | Waiting for page load
+2026-05-10 22:08:53,398 | INFO | test_login | Page loaded successfully
+2026-05-10 22:08:53,399 | INFO | test_login | Waiting for visible element: ('css selector', "[data-testid='home']")
+2026-05-10 22:08:53,399 | INFO | test_login | [HEALING] Trying locator: ('css selector', "[data-testid='home']")
+2026-05-10 22:08:54,192 | INFO | test_login | [HEALING SUCCESS] ('css selector', "[data-testid='home']")
+2026-05-10 22:08:54,192 | INFO | test_login | Element visible: ('css selector', "[data-testid='home']")
+2026-05-10 22:08:54,192 | INFO | test_login | Waiting for visible element: ('css selector', "[data-testid='logout']")
+2026-05-10 22:08:54,192 | INFO | test_login | [HEALING] Trying locator: ('css selector', "[data-testid='logout']")
+2026-05-10 22:08:54,331 | INFO | test_login | [HEALING SUCCESS] ('css selector', "[data-testid='logout']")
+2026-05-10 22:08:54,332 | INFO | test_login | Element visible: ('css selector', "[data-testid='logout']")
+2026-05-10 22:08:54,332 | INFO | test_login | Dashboard loaded successfully
+2026-05-10 22:08:54,332 | INFO | test_login | Login successful

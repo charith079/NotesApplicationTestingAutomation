@@ -6,26 +6,50 @@ from pages.base_page import BasePage
 
 class NotesPage(BasePage):
 
-    # 🔹 Header / Dashboard
+    # =========================================================
+    #  Constructor
+    # =========================================================
+
+    def __init__(self, driver, logger):
+        super().__init__(driver, logger)
+
+        self.logger.info("NotesPage initialized")
+
+    # =========================================================
+    #  Header / Dashboard
+    # =========================================================
+
     home_logo = (By.CSS_SELECTOR, "[data-testid='home']")
     logout_btn = (By.CSS_SELECTOR, "[data-testid='logout']")
     search_input = (By.CSS_SELECTOR, "[data-testid='search-input']")
     add_note_btn = (By.CSS_SELECTOR, "[data-testid='add-new-note']")
 
-    # 🔹 Add Note Modal
+    # =========================================================
+    #  Add Note Modal
+    # =========================================================
+
     category_dropdown = (By.CSS_SELECTOR, "[data-testid='note-category']")
     title_input = (By.CSS_SELECTOR, "[data-testid='note-title']")
     description_input = (By.CSS_SELECTOR, "[data-testid='note-description']")
     submit_btn = (By.CSS_SELECTOR, "[data-testid='note-submit']")
     cancel_btn = (By.CSS_SELECTOR, "[data-testid='note-cancel']")
 
-    # 🔹 Notes List
+    # =========================================================
+    # Notes List
+    # =========================================================
+
     notes_list = (By.CSS_SELECTOR, "[data-testid='notes-list']")
 
-    # 🔹 Success Message
+    # =========================================================
+    #  Success Message
+    # =========================================================
+
     success_message = (By.CSS_SELECTOR, "[data-testid='alert-message']")
 
-    # 🔴 VALIDATION ERRORS
+    # =========================================================
+    # Validation Errors
+    # =========================================================
+
     title_error = (
         By.XPATH,
         "//input[@data-testid='note-title']/following-sibling::div[contains(@class,'invalid-feedback')]"
@@ -37,135 +61,200 @@ class NotesPage(BasePage):
     )
 
     # =========================================================
-    # 🔹 Dashboard validation
+    #  Dashboard Validation
     # =========================================================
 
-    # def is_home_page_loaded(self):
-    #     try:
-    #         return (
-    #             self.wait_visible(self.home_logo).is_displayed() and
-    #             self.wait_visible(self.logout_btn).is_displayed() and
-    #             self.wait_visible(self.search_input).is_displayed() and
-    #             self.wait_visible(self.add_note_btn).is_displayed()
-    #         )
-    #     except:
-    #         return False
-    
     def is_home_page_loaded(self):
+
+        self.logger.info("Validating Notes dashboard")
+
         try:
-            # WebDriverWait(self.driver, 15).until(
-            #     EC.visibility_of_element_located(self.home_logo)
-            # )
-            # WebDriverWait(self.driver, 15).until(
-            #     EC.visibility_of_element_located(self.logout_btn)
-            # )
-            # Intelligent Wait:
+
             self.wait_for_page_load()
 
             self.wait_visible(self.home_logo)
 
             self.wait_visible(self.logout_btn)
+
+            self.logger.info("Dashboard loaded successfully")
+
             return True
-        except:
+
+        except Exception as e:
+
+            self.logger.error(
+                f"Dashboard validation failed: {e}"
+            )
+
             return False
 
     # =========================================================
-    # 🔹 CREATE NOTE (POSITIVE + NEGATIVE SAFE)
+    #  Create Note
     # =========================================================
 
-    def create_note(self, category, title, description, expect_success=True):
+    def create_note(
+        self,
+        category,
+        title,
+        description,
+        expect_success=True
+    ):
+
+        self.logger.info("Starting note creation")
+
+        self.logger.info(
+            f"Category: {category}, Title: {title}"
+        )
 
         self.wait_for_dom_stability()
 
+        self.logger.info("Clicking Add Note button")
+
         self.safe_click(self.add_note_btn)
 
+        self.logger.info("Waiting for note modal")
+
         self.wait_visible(self.category_dropdown)
+
+        self.logger.info(
+            f"Selecting category: {category}"
+        )
 
         Select(
             self.find(self.category_dropdown)
         ).select_by_visible_text(category)
 
-        # 🔹 Handle empty fields properly
-
         if title:
+
+            self.logger.info(
+                f"Entering note title: {title}"
+            )
+
             self.send_keys(self.title_input, title)
 
+        else:
+
+            self.logger.warning(
+                "Title field left empty"
+            )
+
         if description:
-            self.send_keys(self.description_input, description)
+
+            self.logger.info(
+                "Entering note description"
+            )
+
+            self.send_keys(
+                self.description_input,
+                description
+            )
+
+        else:
+
+            self.logger.warning(
+                "Description field left empty"
+            )
+
+        self.logger.info("Submitting note")
 
         self.safe_click(self.submit_btn)
 
-        # # 🔹 Wait for validation rendering
-        # self.wait_for_dom_stability()
-
         if expect_success:
+
+            self.logger.info(
+                "Waiting for successful note creation"
+            )
 
             self.wait_for_page_load()
 
             self.wait_for_dom_stability()
 
+            self.logger.info(
+                "Note created successfully"
+            )
+
     # =========================================================
-    # 🔹 Note validation (STRICT - FIXED)
+    #  Validate Note Presence
     # =========================================================
+
     def is_note_present(self, title):
 
+        self.logger.info(
+            f"Checking if note exists: {title}"
+        )
+
         if not title:
+
+            self.logger.warning(
+                "Empty title passed for validation"
+            )
+
             return False
 
         try:
 
-            # Intelligent Wait:
             self.wait_for_dom_stability()
 
             notes = self.get_text(self.notes_list)
 
-            return title in notes
+            result = title in notes
 
-        except:
+            self.logger.info(
+                f"Note presence result: {result}"
+            )
+
+            return result
+
+        except Exception as e:
+
+            self.logger.error(
+                f"Error checking note presence: {e}"
+            )
+
             return False
 
-    # def is_note_present(self, title):
-    #     if not title:
-    #         return False  # 🔥 IMPORTANT FIX
-
-    #     try:
-    #         WebDriverWait(self.driver, 10).until(
-    #             EC.text_to_be_present_in_element(self.notes_list, title)
-    #         )
-    #         return True
-    #     except:
-    #         return False
-
-
     # =========================================================
-    # 🔹 SAFE NEGATIVE CHECK (NEW - IMPORTANT)
+    #  Validate Note Absence
     # =========================================================
 
     def is_note_absent(self, title):
-        """
-        Use this ONLY for negative validation
-        """
+
+        self.logger.info(
+            f"Checking if note is absent: {title}"
+        )
+
         try:
+
             WebDriverWait(self.driver, 5).until(
-                EC.text_to_be_present_in_element(self.notes_list, title)
+                EC.text_to_be_present_in_element(
+                    self.notes_list,
+                    title
+                )
             )
+
+            self.logger.warning(
+                "Note unexpectedly found"
+            )
+
             return True
-        except:
-            return False  # Not found = PASS condition
+
+        except Exception:
+
+            self.logger.info(
+                "Note correctly absent"
+            )
+
+            return False
 
     # =========================================================
-    # 🔹 SUCCESS MESSAGE
+    #  Success Message
     # =========================================================
 
-    # def get_success_message(self):
-    #     try:
-    #         element = WebDriverWait(self.driver, 10).until(
-    #             EC.visibility_of_element_located(self.success_message)
-    #         )
-    #         return element.text
-    #     except:
-    #         return None
     def get_success_message(self):
+
+        self.logger.info(
+            "Fetching success message"
+        )
 
         try:
 
@@ -174,76 +263,101 @@ class NotesPage(BasePage):
                 timeout=10
             )
 
-            # Intelligent Wait:
             self.wait_for_text(element)
 
-            return element.text.strip()
+            message = element.text.strip()
 
-        except:
+            self.logger.info(
+                f"Success message: {message}"
+            )
+
+            return message
+
+        except Exception as e:
+
+            self.logger.error(
+                f"Unable to fetch success message: {e}"
+            )
+
             return None
+
     # =========================================================
-    # 🔴 VALIDATION ERRORS
+    #  Title Validation Error
     # =========================================================
 
-    # def get_title_error(self):
-    #     try:
-    #         return WebDriverWait(self.driver, 5).until(
-    #             EC.visibility_of_element_located(self.title_error)
-    #         ).text.strip()
-    #     except:
-    #         return ""
-
-    # def get_description_error(self):
-    #     try:
-    #         return WebDriverWait(self.driver, 5).until(
-    #             EC.visibility_of_element_located(self.description_error)
-    #         ).text.strip()
-    #     except:
-    #         return ""
-
-    # def get_field_error(self, field):
-
-    #     locator_map = {
-    #         "title": self.title_error,
-    #         "description": self.description_error
-    #     }
-
-    #     locator = locator_map.get(field)
-
-    #     if not locator:
-    #         return ""
-
-    #     try:
-    #         return WebDriverWait(self.driver, 5).until(
-    #             EC.visibility_of_element_located(locator)
-    #         ).text.strip()
-    #     except:
-    #         return ""
-    
     def get_title_error(self):
 
+        self.logger.info(
+            "Fetching title validation error"
+        )
+
         try:
-            element = self.wait_visible(self.title_error)
+
+            element = self.wait_visible(
+                self.title_error
+            )
 
             self.wait_for_text(element)
 
-            return element.text.strip()
+            error = element.text.strip()
 
-        except:
+            self.logger.warning(
+                f"Title error: {error}"
+            )
+
+            return error
+
+        except Exception as e:
+
+            self.logger.error(
+                f"Unable to fetch title error: {e}"
+            )
+
             return ""
+
+    # =========================================================
+    #  Description Validation Error
+    # =========================================================
+
     def get_description_error(self):
 
+        self.logger.info(
+            "Fetching description validation error"
+        )
+
         try:
-            element = self.wait_visible(self.description_error)
+
+            element = self.wait_visible(
+                self.description_error
+            )
 
             self.wait_for_text(element)
 
-            return element.text.strip()
+            error = element.text.strip()
 
-        except:
+            self.logger.warning(
+                f"Description error: {error}"
+            )
+
+            return error
+
+        except Exception as e:
+
+            self.logger.error(
+                f"Unable to fetch description error: {e}"
+            )
+
             return ""
-            
+
+    # =========================================================
+    #  Generic Field Error
+    # =========================================================
+
     def get_field_error(self, field):
+
+        self.logger.info(
+            f"Fetching validation error for field: {field}"
+        )
 
         locator_map = {
             "title": self.title_error,
@@ -252,13 +366,36 @@ class NotesPage(BasePage):
 
         locator = locator_map.get(field)
 
-        try:
+        if not locator:
 
-            return WebDriverWait(self.driver, 10).until(
-                lambda d: (
-                    text := d.find_element(*locator).text.strip()
-                ) if d.find_element(*locator).text.strip() else False
+            self.logger.error(
+                f"Invalid field provided: {field}"
             )
 
-        except:
+            return ""
+
+        try:
+
+            error = WebDriverWait(self.driver, 10).until(
+                lambda d: (
+                    text := d.find_element(
+                        *locator
+                    ).text.strip()
+                ) if d.find_element(
+                    *locator
+                ).text.strip() else False
+            )
+
+            self.logger.warning(
+                f"{field} validation error: {error}"
+            )
+
+            return error
+
+        except Exception as e:
+
+            self.logger.error(
+                f"Unable to fetch field error: {e}"
+            )
+
             return ""

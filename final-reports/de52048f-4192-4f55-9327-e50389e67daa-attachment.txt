@@ -1,2 +1,0 @@
-2026-05-07 12:32:01,467 | INFO | TC-NEG-01 | ===== TC-NEG-01 STARTED =====
-2026-05-07 12:32:30,331 | INFO | TC-NEG-01 | Application opened

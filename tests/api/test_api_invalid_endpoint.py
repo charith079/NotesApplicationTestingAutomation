@@ -24,7 +24,7 @@ def test_invalid_api_endpoint():
     client = APIClient(config["api_base_url"], logger)
 
     # =========================================================
-    # 🔹 STEP 1: LOGIN (valid flow baseline)
+    #  STEP 1: LOGIN (valid flow baseline)
     # =========================================================
     with allure.step("Login to API"):
         login_resp = client.login(
@@ -36,7 +36,7 @@ def test_invalid_api_endpoint():
         assert login_resp.status_code == 200
 
     # =========================================================
-    # 🔹 STEP 2: CALL INVALID ENDPOINT
+    #  STEP 2: CALL INVALID ENDPOINT
     # =========================================================
     with allure.step("Send request to invalid endpoint"):
 

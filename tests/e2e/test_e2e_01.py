@@ -27,15 +27,15 @@ def test_ui_to_api_validation(driver):
 
     api = APIClient(config["api_base_url"], logger)
 
-    login_page = LoginPage(driver)
-    notes_page = NotesPage(driver)
+    login_page = LoginPage(driver,logger)
+    notes_page = NotesPage(driver,logger)
 
-    # 🔹 OPEN APP
+    #  OPEN APP
     with allure.step("Open application"):
         driver.get(config["base_url"])
         logger.info("Application opened")
 
-    # 🔹 LOGIN UI
+    #  LOGIN UI
     with allure.step("Login via UI"):
         login_page.go_to_login_page()
         login_page.login(
@@ -45,7 +45,7 @@ def test_ui_to_api_validation(driver):
 
     assert notes_page.is_home_page_loaded()
 
-    # 🔹 CREATE NOTE
+    #  CREATE NOTE
     title = f"E2E UI Note {int(time.time())}"
     description = "UI to API validation"
     category = "Home"
@@ -55,7 +55,7 @@ def test_ui_to_api_validation(driver):
 
     assert notes_page.is_note_present(title)
 
-    # 🔹 API VALIDATION
+    #  API VALIDATION
     with allure.step("Validate note in API"):
         api.login(
             config["credentials"]["username"],

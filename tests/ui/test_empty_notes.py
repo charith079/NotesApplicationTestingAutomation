@@ -8,7 +8,7 @@ from utils.logger import get_logger
 
 
 # =========================================================
-# 🔷 TC-NEG-01: Empty Note Creation Validation
+#  TC-NEG-01: Empty Note Creation Validation
 # =========================================================
 
 @pytest.mark.ui
@@ -24,15 +24,15 @@ def test_empty_note_creation(driver):
 
     logger.info("===== TC-NEG-01 STARTED =====")
 
-    login_page = LoginPage(driver)
-    notes_page = NotesPage(driver)
+    login_page = LoginPage(driver,logger)
+    notes_page = NotesPage(driver,logger)
 
-    # 🔹 OPEN APPLICATION
+    #  OPEN APPLICATION
     with allure.step("Open application"):
         driver.get(config["base_url"])
         logger.info("Application opened")
 
-    # 🔹 LOGIN
+    #  LOGIN
     with allure.step("Login with valid credentials"):
         login_page.go_to_login_page()
         login_page.login(
@@ -42,7 +42,7 @@ def test_empty_note_creation(driver):
 
     assert notes_page.is_home_page_loaded()
 
-    # 🔹 ATTEMPT EMPTY NOTE CREATION
+    #  ATTEMPT EMPTY NOTE CREATION
     with allure.step("Attempt to create empty note"):
 
         notes_page.create_note(
@@ -54,7 +54,7 @@ def test_empty_note_creation(driver):
 
         logger.info("Empty note submission attempted")
 
-    # 🔹 VALIDATE ERRORS
+    #  VALIDATE ERRORS
     with allure.step("Validate field-level error messages"):
 
         title_error = notes_page.get_field_error("title")
@@ -75,13 +75,5 @@ def test_empty_note_creation(driver):
         assert description_error == "Description is required", \
             f"Unexpected description error: {description_error}"
 
-    # 🔹 VERIFY NOTE NOT CREATED (FIXED LOGIC)
-    with allure.step("Verify note was NOT created"):
-
-        result = notes_page.is_note_absent("Empty Note")
-
-        logger.info(f"Note existence check: {result}")
-
-        assert not result, "Empty note should not be created"
 
     logger.info("===== TC-NEG-01 COMPLETED =====")

@@ -1,0 +1,14 @@
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+[32mINFO    [0m WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\charith reddy\.wdm\drivers\chromedriver\win64\147.0.7727.117\chromedriver-win32/chromedriver.exe] found in cache
+[32mINFO    [0m TC-NEG-01:test_empty_notes.py:25 ===== TC-NEG-01 STARTED =====
+[32mINFO    [0m TC-NEG-01:test_empty_notes.py:33 Application opened
+[32mINFO    [0m retry_handler:retry_handler.py:129 [RERUN ENGINE] Attempt 1/3
+[32mINFO    [0m retry_handler:retry_handler.py:129 [RERUN ENGINE] Attempt 1/3
+[32mINFO    [0m retry_handler:retry_handler.py:129 [RERUN ENGINE] Attempt 1/3
+[32mINFO    [0m TC-NEG-01:test_empty_notes.py:55 Empty note submission attempted
+[32mINFO    [0m TC-NEG-01:test_empty_notes.py:63 Title Error: Title is required
+[32mINFO    [0m TC-NEG-01:test_empty_notes.py:64 Description Error: Description is required
+[32mINFO    [0m TC-NEG-01:test_empty_notes.py:83 Note existence check: False
+[32mINFO    [0m TC-NEG-01:test_empty_notes.py:87 ===== TC-NEG-01 COMPLETED =====
